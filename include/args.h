@@ -11,6 +11,11 @@
 #ifndef		ARGS_H_
 # define	ARGS_H_
 
-void get_args(int argc, char **argv);
+typedef struct s_args {
+    int port;
+    char *ip;
+}              t_args;
+
+t_args *get_args(int argc, char **argv);
 
 #endif		/* !ARGS_H_ */

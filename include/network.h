@@ -11,6 +11,8 @@
 #ifndef		NETWORK_H_
 # define	NETWORK_H_
 
-void		network(void);
+#include "args.h"
+
+void		network(t_args *args);
 
 #endif		/* !NETWORK_H_ */

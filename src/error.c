@@ -40,6 +40,9 @@ void print_error_and_exit(int id, int status) {
         case ERROR_MISSINGARGS:
             print_to_stderr("An argument is missing.\n");
             break;
+        case ERROR_CONNECT:
+            print_to_stderr("Can't connect.\n");
+            break;
         default:
             break;
     }

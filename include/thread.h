@@ -11,6 +11,8 @@
 #ifndef		THREAD_H_
 # define	THREAD_H_
 
-void		create_thread(void);
+#include "args.h"
+
+void		create_thread(t_args *args);
 
 #endif		/* !THREAD_H_ */

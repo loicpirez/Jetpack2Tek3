@@ -21,7 +21,8 @@ enum e_error {
     ERROR_IPFORMAT,
     ERROR_RESFORMAT,
     ERROR_PORTFORMAT,
-    ERROR_PORTNOTANUMBER
+    ERROR_PORTNOTANUMBER,
+    ERROR_CONNECT
 };
 
 void print_error_and_exit(int id, int status);
