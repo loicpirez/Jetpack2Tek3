@@ -1,0 +1,12 @@
+*.o
+*~
+*#
+.idea
+*.sw*
+CMake*
+cmake*
+*test*
+*tmp*
+serverJ2T3
+clientJ2T3
+a.out
