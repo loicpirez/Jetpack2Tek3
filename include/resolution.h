@@ -16,11 +16,6 @@ typedef struct s_resolution {
     int        y;
 }              t_resolution;
 
-enum           e_format {
-    CORRECT_FORMAT,
-    WRONG_FORMAT
-};
-
 t_resolution	*get_current_resolution(void);
 
 #endif		/* !RESOLUTION_H_ */

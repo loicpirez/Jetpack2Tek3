@@ -9,22 +9,21 @@
 */
 
 #include <SDL2/SDL.h>
+#include <error.h>
 #include "resolution.h"
 
 void graphic() {
-    get_current_resolution();
+    t_resolution *res = get_current_resolution();
     SDL_Window *pWindow = NULL;
 
-    pWindow = SDL_CreateWindow("Jetpack2Tek3", SDL_WINDOWPOS_CENTERED,
+    pWindow = SDL_CreateWindow("jetpack2Tek3", SDL_WINDOWPOS_CENTERED,
                                SDL_WINDOWPOS_UNDEFINED,
                                800,
                                600,
                                SDL_WINDOW_SHOWN);
-    if (pWindow) {
-        //TODO
+    if (pWindow)
         SDL_DestroyWindow(pWindow);
-    } else {
-        fprintf(stderr, "Erreur de création de la fenêtre: %s\n", SDL_GetError()); //Create error fn
-        exit (84);
-    }
+    else
+        print_error_and_exit(ERROR_SDL, 84);
+    free(res);
 }

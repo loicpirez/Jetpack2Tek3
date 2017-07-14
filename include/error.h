@@ -12,7 +12,17 @@
 # define	ERROR_H_
 
 enum e_error {
-    ERROR_MALLOC
+    ERROR_SDL,
+    ERROR_MALLOC,
+    ERROR_COMMAND,
+    ERROR_THREAD,
+    ERROR_FORMAT,
+    ERROR_MISSINGARGS,
+    ERROR_IPFORMAT,
+    ERROR_RESFORMAT
 };
+
+void print_error_and_exit(int id, int status);
+void print_to_stderr(char *msg);
 
 #endif		/* !ERROR_H_ */

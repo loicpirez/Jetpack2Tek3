@@ -8,34 +8,31 @@
 ** Last update Thu Jul 13 15:28:55 2017 Loïc Pirez
 */
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
+#include <error.h>
 #include "graphical.h"
 #include "network.h"
 
 void *graphic_thread(void *arg) {
     graphic();
     (void)arg;
-    return NULL;
+    return (NULL);
 }
 
 void *network_thread(void *arg) {
     network();
     (void)arg;
-    return NULL;
+    return (NULL);
 }
 
 void create_thread() {
     pthread_t pGraphic;
     pthread_t pNetwork;
 
-    if (pthread_create(&pGraphic, NULL, graphic_thread, NULL) == -1 || pthread_create(&pNetwork, NULL, network_thread, NULL) == -1)
-    {
-        fprintf(stderr, "Can't create threads.\n");
-        exit (84); //Create error fn
-    }
-
+    if (pthread_create(&pGraphic, NULL, graphic_thread, NULL) == -1 || \
+        pthread_create(&pNetwork, NULL, network_thread, NULL) == -1)
+        print_error_and_exit(ERROR_THREAD, 84);
     pthread_join(pNetwork, NULL);
     pthread_join(pGraphic, NULL);
 }

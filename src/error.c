@@ -8,11 +8,28 @@
 ** Last update Thu Jul 13 15:28:55 2017 Loïc Pirez
 */
 
+#include <error.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-void print_error_and_exit(char *msg, int status)
-{
+void print_to_stderr(char *msg) {
     fprintf(stderr, msg);
-    exit (status);
+}
+
+void print_error_and_exit(int id, int status) {
+    switch (id) {
+        case ERROR_MALLOC:
+            print_to_stderr("Can't perform memory allocation.\n");
+        case ERROR_SDL:
+            print_to_stderr("Can't initialize SDL.\n");
+        case ERROR_COMMAND:
+            print_to_stderr("Can't execute command.\n");
+        case ERROR_IPFORMAT:
+            print_to_stderr("Wrong format for given IP.\n");
+        case ERROR_RESFORMAT:
+            print_to_stderr("Wrong format for parsed resolution.\n");
+        default:
+            break;
+    }
+    exit(status);
 }

@@ -5,3 +5,5 @@ src/network.c
 src/resolution.c
 src/string.c
 src/error.c
+src/args.c
+src/usage.c

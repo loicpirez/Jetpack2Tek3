@@ -9,15 +9,17 @@
 */
 
 #include <SDL2/SDL.h>
+#include <error.h>
+#include <args.h>
 #include "thread.h"
 
-int main(void) {
-    if (SDL_Init(SDL_INIT_VIDEO) != 0) {
-        fprintf(stderr, "Échec de l'initialisation de la SDL (%s)\n", SDL_GetError());
-        return 84; //create_error_fn
-    } else {
+int main(int argc, char **argv) {
+    get_args(argc, argv);
+
+    if (SDL_Init(SDL_INIT_VIDEO) != 0)
+        print_error_and_exit(ERROR_SDL, 84);
+    else
         create_thread();
-    }
     SDL_Quit();
-    return 0;
+    return (0);
 }
