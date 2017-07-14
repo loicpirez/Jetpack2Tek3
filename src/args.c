@@ -21,6 +21,13 @@ void check_ip_format(char *ip) {
         print_error_and_exit(ERROR_IPFORMAT, 84);
 }
 
+void check_port_format(char *port) {
+    int p;
+
+    if (sscanf(port, "%d", &p) != 1)
+        print_error_and_exit(ERROR_PORTFORMAT, 84);
+}
+
 void get_args(int argc, char **argv) {
     char *ip = NULL;
     char *port = NULL;
@@ -44,7 +51,9 @@ void get_args(int argc, char **argv) {
                 print_usage(argv[0]);
         }
     }
-    if (port == NULL || ip == NULL)
+    if (port == NULL || ip == NULL) {
         print_error_and_exit(ERROR_MISSINGARGS, 84);
+    }
+    check_port_format(port);
     check_ip_format(ip);
 }
