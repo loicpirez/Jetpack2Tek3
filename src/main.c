@@ -24,8 +24,9 @@ int main(int argc, char **argv) {
         print_error_and_exit(ERROR_SDL, 84);
     else
         create_thread(args, server_data);
-    free(args);
-    free(server_data);
+/*    free(args);
+    free(server_data->raw_map);
+    free(server_data);*/
     SDL_Quit();
     return (0);
 }

@@ -8,11 +8,45 @@
 ** Last update Sat Jul 15 13:02:49 2017 Loïc Pirez
 */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <error.h>
+#include "str.h"
 #include "args.h"
 #include "network.h"
 
+void get_id(int sock, t_thread_data *thread_data) {
+    char *check;
+    size_t id;
+
+    check = ask_server(sock, "ID\n");
+    if (sscanf(check, "ID %zu", &id) != 1)
+        print_error_and_exit(ERROR_MAPFORMAT, 84);
+    printf("here");
+    thread_data->server_data->id = id;
+    //free(check);
+}
+
+void get_map(int sock, t_thread_data *thread_data) {
+    char *reply;
+    char *check;
+
+    reply = ask_server(sock, "MAP\n");
+    check = strtok(reply, " ");
+    if ((strcmp(check, "MAP")) != 0)
+        print_error_and_exit(ERROR_MAPFORMAT, 84);
+    if ((thread_data->server_data->raw_map = malloc(sizeof(char) + BUFFER_SIZE)) == NULL)
+        print_error_and_exit(ERROR_MALLOC, 84);
+    check = strtok(NULL, " ");
+    thread_data->server_data->mapX = check_if_number(check, ERROR_MAPFORMAT);
+    check = strtok(NULL, " ");
+    thread_data->server_data->mapY = check_if_number(check, ERROR_MAPFORMAT);
+    check = strtok(NULL, " ");
+    sscanf(check, "%s", thread_data->server_data->raw_map);
+}
+
 void get_informations_from_server(int sock, t_thread_data *thread_data) {
-    ask_server(sock, "ID\n");
-//    ask_server(sock, "MAP\n");
-    (void)thread_data;
+    get_id(sock, thread_data);
+    get_map(sock, thread_data);
 }

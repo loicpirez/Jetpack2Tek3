@@ -13,6 +13,7 @@
 #include <resolution.h>
 #include <string.h>
 #include <error.h>
+#include "str.h"
 
 t_resolution *get_current_resolution(void) {
     t_resolution *current_resolution;

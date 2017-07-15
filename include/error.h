@@ -23,7 +23,8 @@ enum e_error {
     ERROR_SOCKET,
     ERROR_CONNECT,
     ERROR_SEND,
-    ERROR_RECV
+    ERROR_RECV,
+    ERROR_MAPFORMAT
 };
 
 void print_error_and_exit(int id, int status);

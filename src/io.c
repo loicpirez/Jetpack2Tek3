@@ -9,14 +9,19 @@
 */
 
 #include <sys/socket.h>
+#include <malloc.h>
+#include <string.h>
 #include "network.h"
 #include "error.h"
 
-void ask_server(int sock, char *msg) {
-    char server_reply[2000];
+char *ask_server(int sock, char *msg) {
+    char *server_reply;
+
+    if ((server_reply = malloc(sizeof(char) + BUFFER_SIZE)) == NULL)
+        print_error_and_exit(ERROR_MALLOC, 84);
     if (send(sock, msg, strlen(msg), 0) < 0)
         print_error_and_exit(ERROR_SEND, 84);
-    if (recv(sock, server_reply, 2000, 0) < 0)
+    while (recv(sock, server_reply, 3000, 0) < 0)
         print_error_and_exit(ERROR_RECV, 84);
-    //puts(server_reply);
+    return (server_reply);
 }

@@ -41,5 +41,5 @@ void create_thread(t_args *args, t_server_data *server_data) {
         print_error_and_exit(ERROR_THREAD, 84);
     pthread_join(pNetwork, NULL);
     pthread_join(pGraphic, NULL);
-    free(thread_data);
+    //free(thread_data);
 }
