@@ -13,6 +13,7 @@
 #include <arpa/inet.h>
 #include <args.h>
 #include <error.h>
+#include "network.h"
 
 void network(t_args *args) {
     int sock;
@@ -20,14 +21,12 @@ void network(t_args *args) {
     char message[1000], server_reply[2000];
 
     sock = socket(AF_INET, SOCK_STREAM, 0);
-    if (sock == -1) {
-        printf("Could not create socket");
-    }
-    puts("Socket created");
+    if (sock == -1)
+        print_error_and_exit(ERROR_SOCKET, 84);
 
     server.sin_addr.s_addr = inet_addr(args->ip);
     server.sin_family = AF_INET;
-    server.sin_port = htons(args->port);
+    server.sin_port = htons((uint16_t) args->port);
 
     if (connect(sock, (struct sockaddr *) &server, sizeof(server)) < 0) {
         print_error_and_exit(ERROR_CONNECT, 84);

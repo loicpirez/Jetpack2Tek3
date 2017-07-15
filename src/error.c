@@ -14,11 +14,11 @@
 
 void print_to_stderr(char *msg) {
     fprintf(stderr, msg);
-    fflush (0);
+    fflush(0);
 }
 
 void print_error_and_exit(int id, int status) {
-    switch (id) {
+    switch (id) { //fn punters
         case ERROR_MALLOC:
             print_to_stderr("Can't perform memory allocation.\n");
             break;
@@ -40,8 +40,11 @@ void print_error_and_exit(int id, int status) {
         case ERROR_MISSINGARGS:
             print_to_stderr("An argument is missing.\n");
             break;
+        case ERROR_SOCKET:
+            print_to_stderr("Can't create socket.\n");
+            break;
         case ERROR_CONNECT:
-            print_to_stderr("Can't connect.\n");
+            print_to_stderr("Can't connect() to specified IP and Port.\n");
             break;
         default:
             break;

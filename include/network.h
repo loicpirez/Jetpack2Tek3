@@ -13,6 +13,10 @@
 
 #include "args.h"
 
+#ifndef _GNU_SOURCE
+size_t strlen(const char *s);
+#endif
+
 void		network(t_args *args);
 
 #endif		/* !NETWORK_H_ */
