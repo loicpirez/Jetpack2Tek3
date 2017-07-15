@@ -25,7 +25,7 @@ void get_id(int sock, t_thread_data *thread_data) {
     if (sscanf(check, "ID %zu", &id) != 1)
         print_error_and_exit(ERROR_MAPFORMAT, 84);
     thread_data->server_data->id = id;
-    //free(check);
+    free(check);
 }
 
 void get_map(int sock, t_thread_data *thread_data) {
@@ -36,6 +36,7 @@ void get_map(int sock, t_thread_data *thread_data) {
     check = strtok(reply, " ");
     if ((strcmp(check, "MAP")) != 0)
         print_error_and_exit(ERROR_MAPFORMAT, 84);
+
     if ((thread_data->server_data->raw_map = malloc(sizeof(char) + BUFFER_SIZE)) == NULL)
         print_error_and_exit(ERROR_MALLOC, 84);
     check = strtok(NULL, " ");
@@ -46,6 +47,7 @@ void get_map(int sock, t_thread_data *thread_data) {
     thread_data->server_data->raw_map = check;
     remove_char_from_string(thread_data->server_data->raw_map, '\n');
     check_map(thread_data);
+    free(reply);
 }
 
 void get_informations_from_server(int sock, t_thread_data *thread_data) {

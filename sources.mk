@@ -12,3 +12,4 @@ src/io.c
 src/check.c
 src/create.c
 src/server_data.c
+src/free.c

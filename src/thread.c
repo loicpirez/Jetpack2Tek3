@@ -26,7 +26,7 @@ void *network_thread(void *arg) {
     return (NULL);
 }
 
-void create_thread(t_args *args, t_server_data *server_data) {
+t_thread_data *create_thread(t_args *args, t_server_data *server_data) {
     pthread_t pGraphic;
     pthread_t pNetwork;
     t_thread_data *thread_data;
@@ -35,9 +35,10 @@ void create_thread(t_args *args, t_server_data *server_data) {
         print_error_and_exit(ERROR_MALLOC, 84);
     thread_data->args = args;
     thread_data->server_data = server_data;
-    if (pthread_create(&pGraphic, NULL, graphic_thread, NULL) == -1 || \
-        pthread_create(&pNetwork, NULL, network_thread, thread_data) == -1)
+//    if (pthread_create(&pGraphic, NULL, graphic_thread, NULL) == -1 ||
+  if (      pthread_create(&pNetwork, NULL, network_thread, thread_data) == -1)
         print_error_and_exit(ERROR_THREAD, 84);
     pthread_join(pNetwork, NULL);
-    pthread_join(pGraphic, NULL);
+//    pthread_join(pGraphic, NULL);
+    return (thread_data);
 }

@@ -13,16 +13,18 @@
 #include <args.h>
 #include "thread.h"
 #include "server_data.h"
-#include "server_data.h"
+#include "free.h"
 
 int main(int argc, char **argv) {
     t_args *args = get_args(argc, argv);
     t_server_data *server_data = init_server_data();
+    t_thread_data *thread_data;
 
 //    if (SDL_Init(SDL_INIT_VIDEO) != 0)
 //        print_error_and_exit(ERROR_SDL, 84);
 //    else
-        create_thread(args, server_data);
+        thread_data = create_thread(args, server_data);
 //    SDL_Quit();
+    free_structs(thread_data);
     return (0);
 }

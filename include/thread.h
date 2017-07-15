@@ -13,6 +13,6 @@
 
 #include "args.h"
 
-void		create_thread(t_args *args, t_server_data *server_data);
+t_thread_data		*create_thread(t_args *args, t_server_data *server_data);
 
 #endif		/* !THREAD_H_ */
