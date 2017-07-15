@@ -11,7 +11,6 @@
 #ifndef		STRING_H_
 # define	STRING_H_
 
-
 size_t check_if_number(char *str, int error);
 void remove_char_from_string(char *input, char to_skip);
 

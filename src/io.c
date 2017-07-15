@@ -21,7 +21,7 @@ char *ask_server(int sock, char *msg) {
         print_error_and_exit(ERROR_MALLOC, 84);
     if (send(sock, msg, strlen(msg), 0) < 0)
         print_error_and_exit(ERROR_SEND, 84);
-    while (recv(sock, server_reply, 3000, 0) < 0)
+    while (recv(sock, server_reply, BUFFER_SIZE, 0) < 0)
         print_error_and_exit(ERROR_RECV, 84);
     return (server_reply);
 }

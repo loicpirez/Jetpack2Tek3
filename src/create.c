@@ -11,5 +11,5 @@
 #include "args.h"
 
 void create_map(t_thread_data *thread_data) {
-    //TODO
+    (void)thread_data;
 }
