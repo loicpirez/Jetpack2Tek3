@@ -12,21 +12,17 @@
 #include <error.h>
 #include <args.h>
 #include "thread.h"
-#include "server.h"
+#include "server_data.h"
+#include "server_data.h"
 
 int main(int argc, char **argv) {
     t_args *args = get_args(argc, argv);
-    t_server_data *server_data;
+    t_server_data *server_data = init_server_data();
 
-    if ((server_data = malloc(sizeof(t_server_data *))) == NULL)
-        print_error_and_exit(ERROR_MALLOC, 84);
-    if (SDL_Init(SDL_INIT_VIDEO) != 0)
-        print_error_and_exit(ERROR_SDL, 84);
-    else
+//    if (SDL_Init(SDL_INIT_VIDEO) != 0)
+//        print_error_and_exit(ERROR_SDL, 84);
+//    else
         create_thread(args, server_data);
-/*    free(args);
-    free(server_data->raw_map);
-    free(server_data);*/
-    SDL_Quit();
+//    SDL_Quit();
     return (0);
 }

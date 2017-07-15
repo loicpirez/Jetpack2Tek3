@@ -11,7 +11,7 @@
 #ifndef		ARGS_H_
 # define	ARGS_H_
 
-#include "server.h"
+#include "server_data.h"
 
 typedef struct s_args {
     int port;

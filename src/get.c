@@ -13,7 +13,7 @@
 #include <string.h>
 #include <error.h>
 #include <check.h>
-#include "str.h"
+#include "strings.h"
 #include "args.h"
 #include "network.h"
 
