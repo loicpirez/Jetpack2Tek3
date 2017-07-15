@@ -45,7 +45,6 @@ void get_map(int sock, t_thread_data *thread_data) {
     thread_data->server_data->mapY = check_if_number(check, ERROR_MAPFORMAT);
     check = strtok(NULL, " ");
     strcpy(thread_data->server_data->raw_map , check);
-    //thread_data->server_data->raw_map = check;
     remove_char_from_string(thread_data->server_data->raw_map, '\n');
     check_map(thread_data);
     free(reply);

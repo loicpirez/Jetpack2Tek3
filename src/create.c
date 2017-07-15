@@ -12,4 +12,5 @@
 
 void create_map(t_thread_data *thread_data) {
     (void)thread_data;
+    //TODO
 }

@@ -18,6 +18,7 @@ typedef struct s_server_data {
     size_t mapX;
     size_t mapY;
     char *raw_map;
+    char **map;
 }              t_server_data;
 
 t_server_data *init_server_data(void);

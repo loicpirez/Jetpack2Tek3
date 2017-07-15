@@ -22,6 +22,7 @@ t_server_data *init_server_data(void) {
     server_data->mapY = 0;
     server_data->raw_map = 0;
     server_data->id = 0;
+    server_data->map = 0;
     return (server_data);
 }
 
