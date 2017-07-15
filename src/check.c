@@ -8,8 +8,12 @@
 ** Last update Sat Jul 15 17:37:19 2017 Loïc Pirez
 */
 
+#include <printf.h>
+#include <string.h>
+#include <error.h>
 #include "args.h"
 
 void check_map(t_thread_data *thread_data) {
-    (void)thread_data;
+    if (strlen(thread_data->server_data->raw_map) != thread_data->server_data->mapX * thread_data->server_data->mapY)
+        print_error_and_exit(ERROR_MAPFORMAT, 84);
 }
