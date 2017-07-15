@@ -21,7 +21,9 @@ enum e_error {
     ERROR_RESFORMAT,
     ERROR_MISSINGARGS,
     ERROR_SOCKET,
-    ERROR_CONNECT
+    ERROR_CONNECT,
+    ERROR_SEND,
+    ERROR_RECV
 };
 
 void print_error_and_exit(int id, int status);

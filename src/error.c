@@ -46,6 +46,12 @@ void print_error_and_exit(int id, int status) {
         case ERROR_CONNECT:
             print_to_stderr("Can't connect() to specified IP and Port.\n");
             break;
+        case ERROR_SEND:
+            print_to_stderr("Can't send() data to server.\n");
+            break;
+        case ERROR_RECV:
+            print_to_stderr("Can't recv() data to server.\n");
+            break;
         default:
             break;
     }

@@ -13,46 +13,35 @@
 #include <arpa/inet.h>
 #include <args.h>
 #include <error.h>
+#include <unistd.h>
 #include "network.h"
+
+void ask_server(int sock, char *msg) {
+    char server_reply[2000];
+    if (send(sock, msg, strlen(msg), 0) < 0)
+        print_error_and_exit(ERROR_SEND, 84);
+    if (recv(sock, server_reply, 2000, 0) < 0)
+        print_error_and_exit(ERROR_RECV, 84);
+    puts(server_reply);
+
+}
+
+void get_informations_from_server(int sock) {
+    ask_server(sock, "ID\n");
+    ask_server(sock, "MAP\n");
+}
 
 void network(t_args *args) {
     int sock;
     struct sockaddr_in server;
-    char message[1000], server_reply[2000];
 
-    sock = socket(AF_INET, SOCK_STREAM, 0);
-    if (sock == -1)
+    if ((sock = socket(AF_INET, SOCK_STREAM, 0)) == -1)
         print_error_and_exit(ERROR_SOCKET, 84);
-
     server.sin_addr.s_addr = inet_addr(args->ip);
     server.sin_family = AF_INET;
     server.sin_port = htons((uint16_t) args->port);
-
-    if (connect(sock, (struct sockaddr *) &server, sizeof(server)) < 0) {
+    if (connect(sock, (struct sockaddr *) &server, sizeof(server)) < 0)
         print_error_and_exit(ERROR_CONNECT, 84);
-    }
-
-    puts("Connected\n");
-
-    while (1) {
-        printf("Enter message : ");
-        scanf("%s", message);
-
-        //Send some data
-        if (send(sock, message, strlen(message), 0) < 0) {
-            puts("Send failed");
-            return 1;
-        }
-
-        //Receive a reply from the server
-        if (recv(sock, server_reply, 2000, 0) < 0) {
-            puts("recv failed");
-            break;
-        }
-
-        puts("Server reply :");
-        puts(server_reply);
-    }
-
+    get_informations_from_server(sock);
     close(sock);
 }
