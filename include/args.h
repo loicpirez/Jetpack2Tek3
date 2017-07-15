@@ -11,10 +11,17 @@
 #ifndef		ARGS_H_
 # define	ARGS_H_
 
+#include "server.h"
+
 typedef struct s_args {
     int port;
     char *ip;
 }              t_args;
+
+typedef struct s_thread_data {
+    t_args *args;
+    t_server_data *server_data;
+}   t_thread_data;
 
 t_args *get_args(int argc, char **argv);
 

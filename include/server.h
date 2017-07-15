@@ -11,6 +11,8 @@
 #ifndef		SERVER_H_
 # define	SERVER_H_
 
+#include <stddef.h>
+
 typedef struct s_server_data {
     size_t id;
 }              t_server_data;

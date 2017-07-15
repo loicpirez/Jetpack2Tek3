@@ -24,8 +24,6 @@ CFLAGS	+=	-W -Wall -pedantic -lSDL2 -lpthread
 
 CFLAGS	+=	$(INCLUDE)	\
 
-CFLAGS	+=	-g #DEBUG
-
 CC	=	gcc
 
 all:		$(NAME)
@@ -35,6 +33,10 @@ $(NAME):	$(OBJS)
 
 clean:
 		$(RM) $(OBJS)
+
+debug:		CFLAGS += -g
+
+debug:		all
 
 fclean:		clean
 		$(RM) $(NAME)

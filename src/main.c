@@ -23,7 +23,7 @@ int main(int argc, char **argv) {
     if (SDL_Init(SDL_INIT_VIDEO) != 0)
         print_error_and_exit(ERROR_SDL, 84);
     else
-        create_thread(args);
+        create_thread(args, server_data);
     free(args);
     free(server_data);
     SDL_Quit();

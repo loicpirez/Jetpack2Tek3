@@ -7,3 +7,5 @@ src/string.c
 src/error.c
 src/args.c
 src/usage.c
+src/get.c
+src/io.c

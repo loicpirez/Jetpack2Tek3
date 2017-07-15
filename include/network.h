@@ -17,6 +17,8 @@
 size_t strlen(const char *s);
 #endif
 
-void		network(t_args *args);
+void		network(t_thread_data *thread_data);
+void get_informations_from_server(int sock, t_thread_data *thread_data);
+void ask_server(int sock, char *msg);
 
 #endif		/* !NETWORK_H_ */
