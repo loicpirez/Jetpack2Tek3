@@ -9,3 +9,4 @@ src/args.c
 src/usage.c
 src/get.c
 src/io.c
+src/check.c

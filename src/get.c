@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <error.h>
+#include <check.h>
 #include "str.h"
 #include "args.h"
 #include "network.h"
@@ -23,7 +24,6 @@ void get_id(int sock, t_thread_data *thread_data) {
     check = ask_server(sock, "ID\n");
     if (sscanf(check, "ID %zu", &id) != 1)
         print_error_and_exit(ERROR_MAPFORMAT, 84);
-    printf("here");
     thread_data->server_data->id = id;
     //free(check);
 }
@@ -43,7 +43,8 @@ void get_map(int sock, t_thread_data *thread_data) {
     check = strtok(NULL, " ");
     thread_data->server_data->mapY = check_if_number(check, ERROR_MAPFORMAT);
     check = strtok(NULL, " ");
-    sscanf(check, "%s", thread_data->server_data->raw_map);
+    thread_data->server_data->raw_map = check;
+    check_map(thread_data);
 }
 
 void get_informations_from_server(int sock, t_thread_data *thread_data) {
