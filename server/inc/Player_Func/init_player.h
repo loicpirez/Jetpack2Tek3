@@ -11,6 +11,7 @@
 #ifndef		JETPACK2TEK3_2016_INIT_PLAYER_H
 # define	JETPACK2TEK3_2016_INIT_PLAYER_H
 
+# include	<stdlib.h>
 # include	"player_struct.h"
 
 #endif		//JETPACK2TEK3_2016_INIT_PLAYER_H

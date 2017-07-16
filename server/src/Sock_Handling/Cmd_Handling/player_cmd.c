@@ -8,4 +8,9 @@
 ** Last update Sat Jul 15 15:22:36 2017 Valerian VERMEULEN
 */
 
-#include	"Socket_Functions_Headers/Command_Functions_Headers"
+#include	"Sock_Func/Cmd_Func/player_cmd.h"
+
+void		player_cmd(void)
+{
+
+}

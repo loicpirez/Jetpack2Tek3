@@ -8,4 +8,9 @@
 ** Last update Sat Jul 15 15:21:00 2017 Valerian VERMEULEN
 */
 
-#include	"Socket_Functions_Headers/Command_Functions_Headers/fire_cmd.h"
+#include	"Sock_Func/Cmd_Func/fire_cmd.h"
+
+void		fire_cmd(void)
+{
+
+}

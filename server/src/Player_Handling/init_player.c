@@ -8,4 +8,15 @@
 ** Last update Sat Jul 15 15:15:41 2017 Valerian VERMEULEN
 */
 
-#include	"Player_Functions_Headers/init_player.h"
+#include	"Player_Func/init_player.h"
+
+void		init_player(t_player *player)
+{
+  player = malloc(sizeof(t_player));
+  if (player == NULL)
+    exit(84);
+  player->id = 0;
+  player->x = 0;
+  player->y = 0;
+  player->score = 0;
+}

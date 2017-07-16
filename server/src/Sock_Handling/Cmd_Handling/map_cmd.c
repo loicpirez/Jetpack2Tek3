@@ -8,4 +8,9 @@
 ** Last update Sat Jul 15 15:22:05 2017 Valerian VERMEULEN
 */
 
-#include	"Socket_Functions_Headers/Command_Functions_Headers/map_cmd.h"
+#include	"Sock_Func/Cmd_Func/map_cmd.h"
+
+void		map_cmd(void)
+{
+
+}

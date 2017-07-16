@@ -8,4 +8,9 @@
 ** Last update Sat Jul 15 15:18:58 2017 Valerian VERMEULEN
 */
 
-#include	"Socket_Functions_Headers/Command_Functions_Headers/coin_cmd.h"
+#include	"Sock_Func/Cmd_Func/coin_cmd.h"
+
+void		coin_cmd(void)
+{
+
+}

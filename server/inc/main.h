@@ -11,4 +11,11 @@
 #ifndef		JETPACK2TEK3_2016_MAIN_H
 # define	JETPACK2TEK3_2016_MAIN_H
 
+# include	<stdio.h>
+# include	<stdlib.h>
+# include	"Player_Func/player_struct.h"
+
+void		init_map(char *map, char *filename);
+void		init_player(t_player *player);
+
 #endif		//JETPACK2TEK3_2016_MAIN_H

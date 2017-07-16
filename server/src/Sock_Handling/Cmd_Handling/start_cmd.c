@@ -8,4 +8,9 @@
 ** Last update Sat Jul 15 15:24:59 2017 Valerian VERMEULEN
 */
 
-#include	"Socket_Functions_Headers/Command_Functions_Headers/start_cmd.h"
+#include	"Sock_Func/Cmd_Func/start_cmd.h"
+
+void		start_cmd(void)
+{
+
+}

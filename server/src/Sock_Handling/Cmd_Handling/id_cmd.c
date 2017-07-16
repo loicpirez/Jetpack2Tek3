@@ -8,4 +8,9 @@
 ** Last update Sat Jul 15 15:21:38 2017 Valerian VERMEULEN
 */
 
-#include	"Socket_Functions_Headers/Command_Functions_Headers/id_cmd.h"
+#include	"Sock_Func/Cmd_Func/id_cmd.h"
+
+void		id_cmd(void)
+{
+
+}

@@ -8,5 +8,9 @@
 ** Last update Sat Jul 15 15:19:39 2017 Valerian VERMEULEN
 */
 
-#include	"Socket_Functions_Headers/" \
-		"Command_Functions_Headers/finish_cmd.h"
+#include	"Sock_Func/Cmd_Func/finish_cmd.h"
+
+void		finish_cmd(void)
+{
+
+}

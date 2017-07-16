@@ -8,4 +8,9 @@
 ** Last update Sat Jul 15 15:17:57 2017 Valerian VERMEULEN
 */
 
-#include	"Socket_Functions_Headers/init_socket.h"
+#include	"Sock_Func/init_socket.h"
+
+void		init_socket(void)
+{
+
+}

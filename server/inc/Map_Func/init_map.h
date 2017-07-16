@@ -11,4 +11,9 @@
 #ifndef		JETPACK2TEK3_2016_INIT_MAP_H
 # define	JETPACK2TEK3_2016_INIT_MAP_H
 
+# include	<stdio.h>
+# include	<string.h>
+
+FILE		*open_file(char *filename);
+
 #endif		//JETPACK2TEK3_2016_INIT_MAP_H
