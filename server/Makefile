@@ -4,6 +4,34 @@
 ## Made by Valerian Vermeulen
 ## Login   <vermeu_v@epitech.net>
 ## 
-## Started on  Fri Jul 14 10:53:32 2017 Valerian Vermeulen
-## Last update Fri Jul 14 10:53:32 2017 Valerian Vermeulen
+## Started on  Sat Jul 15 17:27:27 2017 Valerian Vermeulen
+## Last update Sat Jul 15 17:31:57 2017 Valerian Vermeulen
 ##
+
+CC		=	gcc
+
+RM		=	rm -rf
+
+CFLAGS	+=	-W -Wall -Wextra -Werror
+CLFAGS	+=	-Iinc
+
+LDFLAGS	+=
+
+NAME	=	serverJ2T3
+
+SRCS	=	main.c
+
+OBJS	=	$(SRCS:.c=.o)
+
+all		:	$(OBJS)
+			$(CC) -o $(NAME) $(OBJS) $(LDFLAGS)
+
+clean	:
+			$(RM) $(OBJS)
+
+fclean	:	clean
+			$(RM) $(NAME)
+
+re		:	fclean all
+
+.PHONY	:	all clean fclean re
