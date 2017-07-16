@@ -11,6 +11,6 @@
 #ifndef		GRAPHICAL_H_
 # define	GRAPHICAL_H_
 
-void		graphic(void);
+void		graphic(t_thread_data *thread_data);
 
 #endif		/* !GRAPHICAL_H_ */

@@ -11,18 +11,7 @@
 #include <stdlib.h>
 #include "thread.h"
 
-void free_map(t_thread_data *thread_data) {
-    size_t x = 0;
-
-    while (x != thread_data->server_data->mapX + 1) {
-        free(thread_data->server_data->map[x]);
-        x++;
-    }
-    free(thread_data->server_data->map);
-}
-
 void free_structs(t_thread_data *thread_data) {
-    free_map(thread_data);
     free(thread_data->server_data->raw_map);
     free(thread_data->server_data);
     free(thread_data->args);
