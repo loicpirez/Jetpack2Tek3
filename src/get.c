@@ -40,9 +40,9 @@ void get_map(int sock, t_thread_data *thread_data) {
     if ((thread_data->server_data->raw_map = malloc(sizeof(char) + BUFFER_SIZE)) == NULL)
         print_error_and_exit(ERROR_MALLOC, 84);
     check = strtok(NULL, " ");
-    thread_data->server_data->mapX = check_if_number(check, ERROR_MAPFORMAT);
-    check = strtok(NULL, " ");
     thread_data->server_data->mapY = check_if_number(check, ERROR_MAPFORMAT);
+    check = strtok(NULL, " ");
+    thread_data->server_data->mapX = check_if_number(check, ERROR_MAPFORMAT);
     check = strtok(NULL, " ");
     strcpy(thread_data->server_data->raw_map , check);
     remove_char_from_string(thread_data->server_data->raw_map, '\n');

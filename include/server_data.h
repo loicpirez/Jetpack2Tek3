@@ -12,6 +12,7 @@
 # define	INIT_SERVER_DATA_H_
 
 #include <stddef.h>
+#include <stdbool.h>
 
 typedef struct s_server_data {
     size_t id;
@@ -19,6 +20,7 @@ typedef struct s_server_data {
     size_t mapY;
     char *raw_map;
     char **map;
+    bool is_ready;
 }              t_server_data;
 
 t_server_data *init_server_data(void);

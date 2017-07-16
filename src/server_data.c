@@ -10,6 +10,7 @@
 
 #include <stdlib.h>
 #include <error.h>
+#include <stdbool.h>
 #include "server_data.h"
 
 t_server_data *init_server_data(void) {
@@ -17,11 +18,12 @@ t_server_data *init_server_data(void) {
 
     if ((server_data = malloc(sizeof(t_server_data))) == NULL)
         print_error_and_exit(ERROR_MALLOC, 84);
-
     server_data->mapX = 0;
     server_data->mapY = 0;
     server_data->raw_map = 0;
     server_data->id = 0;
+    server_data->map = 0;
+    server_data->is_ready = false;
     server_data->map = 0;
     return (server_data);
 }

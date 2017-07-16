@@ -36,6 +36,8 @@ clean:
 
 debug:		CFLAGS += -g
 
+debug:		fclean
+
 debug:		all
 
 fclean:		clean
