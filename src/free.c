@@ -12,7 +12,10 @@
 #include "thread.h"
 
 void free_structs(t_thread_data *thread_data) {
-    free(thread_data->server_data);
-    free(thread_data->args);
-    free(thread_data);
+    if (thread_data->server_data)
+        free(thread_data->server_data);
+    if (thread_data->args)
+        free(thread_data->args);
+    if (thread_data)
+        free(thread_data);
 }

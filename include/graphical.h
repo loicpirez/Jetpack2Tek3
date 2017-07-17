@@ -11,6 +11,13 @@
 #ifndef		GRAPHICAL_H_
 # define	GRAPHICAL_H_
 
+#define COLOR_B  6, 20, 57, 255
+#define COLOR_E  "0x49F5FC"
+#define COLOR_C  242, 220, 58, 255
+#define COLOR_P1 "0x0EE228"
+#define COLOR_P2 "0xD70903"
+
+
 void		graphic(t_thread_data *thread_data);
 
 #endif		/* !GRAPHICAL_H_ */
