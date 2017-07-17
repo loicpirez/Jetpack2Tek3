@@ -26,6 +26,14 @@ t_server_data *init_server_data(void) {
     server_data->sock = 0;
     server_data->got_id = false;
     server_data->got_map = false;
+    server_data->player_one_x = 0;
+    server_data->player_one_y = 0;
+    server_data->player_one_points = 0;
+    server_data->player_two_x = 0;
+    server_data->player_two_y = 0;
+    server_data->player_two_points = 0;
+    server_data->is_finish = false;
+    server_data->winner = 0;
     return (server_data);
 }
 

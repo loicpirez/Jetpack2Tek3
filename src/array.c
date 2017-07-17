@@ -39,6 +39,19 @@ int find_index(char **array, char *str) {
     return (84);
 }
 
+
+int count_occurencies(char **array, char *str) {
+    int i = 0;
+    int occurencies = 0;
+
+    while (array[i]) {
+        if (strcmp(array[i], str) == 0)
+            occurencies += 1;
+        i++;
+    }
+    return (occurencies);
+}
+
 int get_array_length(char **array) {
     int i = 0;
 
@@ -51,7 +64,7 @@ char **split(char *str, char *token) {
     char **array;
     int i = 0;
 
-    if ((array = malloc(BUFFER_SIZE * sizeof(char *) + (BUFFER_SIZE * (10 * sizeof(char))))) == NULL)
+    if ((array = malloc(BUFFER_SIZE * sizeof(char *) + (BUFFER_SIZE * (MAX_WORDS * sizeof(char))))) == NULL)
         print_error_and_exit(ERROR_MALLOC, 84);
     array[i] = strtok(str, token);
     while (array[i] != NULL) {

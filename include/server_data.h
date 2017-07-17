@@ -22,7 +22,15 @@ typedef struct s_server_data {
     bool is_ready;
     bool got_id;
     bool got_map;
+    float player_one_x;
+    float player_one_y;
+    int player_one_points;
+    float player_two_x;
+    float player_two_y;
+    int player_two_points;
     int sock;
+    bool is_finish;
+    int winner;
 }              t_server_data;
 
 t_server_data *init_server_data(void);

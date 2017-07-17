@@ -33,7 +33,6 @@ void network(t_thread_data *thread_data) {
         else if (status != 0) {
             output = split(reply, " \n");
             check_answer(output, thread_data);
-            print_array(output);
             if ((reply = malloc(sizeof(char) + BUFFER_SIZE)) == NULL)
                 print_error_and_exit(ERROR_MALLOC, 84);
         } else if (strlen(reply) >= BUFFER_SIZE)

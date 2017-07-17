@@ -14,6 +14,7 @@ char **split(char *str, char *token);
 int get_array_length(char **array);
 int find_index(char **array, char *str);
 void print_array(char **array);
+int count_occurencies(char **array, char *str);
 
 #endif		/* !ARRAY_H_ */
 

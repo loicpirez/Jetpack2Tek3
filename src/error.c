@@ -40,13 +40,17 @@ void print_error_and_exit(int id, int status) {
         print_to_stderr("Can't send() data to server.\n");
     if (id == ERROR_RECV)
         print_to_stderr("Can't recv() data to server.\n");
-    if (id == ERROR_MAPFORMAT)
-        print_to_stderr("Wrong format got for MAP request.\n");
     if (id == ERROR_FD)
         print_to_stderr("Can't recv() on given fd.\n");
     if (id == ERROR_BIGPACKET)
         print_to_stderr("Packet is to big to handle.\n");
     if (id == ERROR_IDFORMAT)
-        print_to_stderr("Wrong format received for server for ID.\n");
+        print_to_stderr("Wrong format received for server (ID).\n");
+    if (id == ERROR_MAPFORMAT)
+        print_to_stderr("Wrong format received for server (MAP).\n");
+    if (id == ERROR_PLAYERFORMAT)
+        print_to_stderr("Wrong format received for server (Player).\n");
+    if (id == ERROR_ENDFORMAT)
+        print_to_stderr("Wrong format received for server (Finish).\n");
     exit(status);
 }

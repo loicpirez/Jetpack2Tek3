@@ -18,7 +18,6 @@ bool check_string_content(char *str, char *letter) {
     int l = 0;
     bool okay = false;
 
-    printf("checking: %s", str);
     while (str[i]) {
         okay = false;
         while (letter[l]) {
