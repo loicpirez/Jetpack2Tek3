@@ -13,9 +13,10 @@
 
 # include	<stdio.h>
 # include	<stdlib.h>
+# include	"Map_Func/map_struct.h"
 # include	"Player_Func/player_struct.h"
 
-void		init_map(char *map, char *filename);
+t_map		init_map(char *filename);
 void		init_player(t_player *player);
 
 #endif		//JETPACK2TEK3_2016_MAIN_H

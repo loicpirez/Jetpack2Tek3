@@ -14,10 +14,6 @@ RM		=	rm -rf
 
 CFLAGS	+=	-W -Wall -Wextra -Werror -g ## TODO : remove -g
 CFLAGS	+=	-Iinc
-CFLAGS	+=	-Iinc/Map_Functions_Headers
-CFLAGS	+=	-Iinc/Player_Functions_Headers
-CFLAGS	+=	-Iinc/Socket_Functions_Headers
-CFLAGS	+=	-Iinc/Socket_Functions_Headers/Command_Functions_Headers
 
 LDFLAGS	+=
 
@@ -36,6 +32,8 @@ CMD	=	src/Sock_Handling/Cmd_Handling/
 SRCS	=	$(SRC)main.c \
 		$(MAP)init_map.c \
 		$(MAP)open_file.c \
+		$(MAP)check_line.c \
+		$(MAP)add_line.c \
 		$(PLAYER)init_player.c \
 		$(SOCKET)init_socket.c \
 		$(CMD)coin_cmd.c \

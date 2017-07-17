@@ -10,20 +10,29 @@
 
 #include	"Map_Func/init_map.h"
 
-void		init_map(char *map, char *filename)
+t_map		init_map(char *filename)
 {
+  int		cpt;
   size_t	size;
   char		*buff;
   FILE		*fd;
+  t_map		map;
 
+
+  cpt = 0;
   size = 0;
   buff = NULL;
+  map.map = NULL;
   fd = open_file(filename);
   while (getline(&buff, &size, fd) != -1)
   {
-    map = strcat(map, buff);
-    printf("%s\n", map);
+    if (check_line(buff) == 0)
+      add_line(&map, buff, cpt);
+    cpt++;
   }
+  map.width = cpt;
+  map.height = (int)(strlen(map.map[0]) - 1);
+  map.map[cpt] = NULL;
   fclose(fd);
-  printf("Map : '%s'\n", map);
+  return (map);
 }
