@@ -12,8 +12,5 @@
 # define	GET_H_
 
 void get_first_informations(t_thread_data *thread_data);
-void get_id(int sock, t_thread_data *thread_data);
-void get_map(int sock, t_thread_data *thread_data);
-void get_informations_from_server(int sock, t_thread_data *thread_data);
 
 #endif		/* !GET_H_ */

@@ -16,58 +16,18 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <unistd.h>
+#include <fcntl.h>
 #include "strings.h"
 #include "network.h"
 
-void get_id(int sock, t_thread_data *thread_data) {
-    char *check;
-    size_t id;
-
-    check = ask_server(sock, "ID\n");
-    if (sscanf(check, "ID %zu", &id) != 1)
-        print_error_and_exit(ERROR_MAPFORMAT, 84);
-    thread_data->server_data->id = id;
-    free(check);
-}
-
-void get_map(int sock, t_thread_data *thread_data) {
-    char *reply;
-    char *check;
-
-    reply = ask_server(sock, "MAP\n");
-    check = strtok(reply, " ");
-    if ((strcmp(check, "MAP")) != 0)
-        print_error_and_exit(ERROR_MAPFORMAT, 84);
-
-    if ((thread_data->server_data->raw_map = malloc(sizeof(char) + BUFFER_SIZE)) == NULL)
-        print_error_and_exit(ERROR_MALLOC, 84);
-    check = strtok(NULL, " ");
-    thread_data->server_data->mapX = check_if_number(check, ERROR_MAPFORMAT);
-    check = strtok(NULL, " ");
-    thread_data->server_data->mapY = check_if_number(check, ERROR_MAPFORMAT);
-    check = strtok(NULL, " ");
-    strcpy(thread_data->server_data->raw_map , check);
-    remove_char_from_string(thread_data->server_data->raw_map, '\n');
-    check_map(thread_data);
-    free(reply);
-}
-
-void get_informations_from_server(int sock, t_thread_data *thread_data) {
-    get_id(sock, thread_data);
-    get_map(sock, thread_data);
-}
-
 void get_first_informations(t_thread_data *thread_data) {
-    int sock;
     struct sockaddr_in server;
 
-    if ((sock = socket(AF_INET, SOCK_STREAM, 0)) == -1)
+    if ((thread_data->server_data->sock = socket(AF_INET, SOCK_STREAM, 0)) == -1)
         print_error_and_exit(ERROR_SOCKET, 84);
     server.sin_addr.s_addr = inet_addr(thread_data->args->ip);
     server.sin_family = AF_INET;
     server.sin_port = htons((uint16_t) thread_data->args->port);
-    if (connect(sock, (struct sockaddr *) &server, sizeof(server)) < 0)
+    if (connect(thread_data->server_data->sock, (struct sockaddr *) &server, sizeof(server)) < 0)
         print_error_and_exit(ERROR_CONNECT, 84);
-    get_informations_from_server(sock, thread_data);
-    close(sock);
 }

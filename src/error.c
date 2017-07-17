@@ -42,5 +42,9 @@ void print_error_and_exit(int id, int status) {
         print_to_stderr("Can't recv() data to server.\n");
     if (id == ERROR_MAPFORMAT)
         print_to_stderr("Wrong format got for MAP request.\n");
+    if (id == ERROR_FD)
+        print_to_stderr("Can't recv() on given fd.\n");
+    if (id == ERROR_BIGPACKET)
+        print_to_stderr("Packet is to big to handle.\n");
     exit(status);
 }

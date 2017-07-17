@@ -23,6 +23,9 @@ t_server_data *init_server_data(void) {
     server_data->raw_map = 0;
     server_data->id = 0;
     server_data->is_ready = false;
+    server_data->sock = 0;
+    server_data->got_id = false;
+    server_data->got_map = false;
     return (server_data);
 }
 

@@ -11,12 +11,12 @@
 #ifndef		NETWORK_H_
 # define	NETWORK_H_
 
-#define BUFFER_SIZE 1024
+#define BUFFER_SIZE 8192
 
 #include "args.h"
 
 void network(t_thread_data *thread_data);
 void get_informations_from_server(int sock, t_thread_data *thread_data);
-char * ask_server(int sock, char *msg);
+void ask_server(int sock, char *msg);
 
 #endif		/* !NETWORK_H_ */

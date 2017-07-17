@@ -20,6 +20,9 @@ typedef struct s_server_data {
     size_t mapY;
     char *raw_map;
     bool is_ready;
+    bool got_id;
+    bool got_map;
+    int sock;
 }              t_server_data;
 
 t_server_data *init_server_data(void);

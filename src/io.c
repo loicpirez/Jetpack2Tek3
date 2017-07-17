@@ -11,17 +11,11 @@
 #include <sys/socket.h>
 #include <malloc.h>
 #include <string.h>
+#include <strings.h>
 #include "network.h"
 #include "error.h"
 
-char *ask_server(int sock, char *msg) {
-    char *server_reply;
-
-    if ((server_reply = malloc(sizeof(char) + BUFFER_SIZE)) == NULL)
-        print_error_and_exit(ERROR_MALLOC, 84);
-    if (send(sock, msg, strlen(msg), 0) < 0)
+void ask_server(int sock, char *msg) {
+    if (send(sock, msg, strlen(msg), MSG_DONTWAIT) < 0)
         print_error_and_exit(ERROR_SEND, 84);
-    while (recv(sock, server_reply, BUFFER_SIZE, 0) < 0)
-        print_error_and_exit(ERROR_RECV, 84);
-    return (server_reply);
 }
