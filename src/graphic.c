@@ -14,6 +14,7 @@
 #include "resolution.h"
 
 void graphic(t_thread_data *thread_data) {
+    (void)thread_data;
     t_resolution *res = get_current_resolution();
     SDL_Window *pWindow = NULL;
 

@@ -55,7 +55,7 @@ char **split(char *str, char *token) {
         print_error_and_exit(ERROR_MALLOC, 84);
     array[i] = strtok(str, token);
     while (array[i] != NULL) {
-        i = ++i;
+        ++i;
         array[i] = strtok(NULL, " \n");
     }
     i = 0;

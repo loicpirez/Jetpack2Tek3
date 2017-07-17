@@ -13,7 +13,8 @@
 
 #include "thread.h"
 
-void check_id(char **answer, int array_length, t_thread_data *thread_data);
+void check_player(char **answer, int array_length, t_thread_data *thread_data);
+void check_id(char **answer, t_thread_data *thread_data);
 void check_answer(char **answer, t_thread_data *thread_data);
 void check_map(char *reply, t_thread_data *thread_data);
 

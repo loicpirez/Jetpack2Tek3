@@ -17,7 +17,7 @@
 #include <stdio.h>
 #include <array.h>
 
-void check_map(char **answer, int array_length, t_thread_data *thread_data) {
+void check_map(char **answer, t_thread_data *thread_data) {
     int index = find_index(answer, "MAP");
     if (!answer[index + 1] || !answer[index + 2] || !answer[index + 3] ||
         (sscanf(answer[index + 1], "%zu", &thread_data->server_data->mapX) != 1) ||
@@ -27,24 +27,32 @@ void check_map(char **answer, int array_length, t_thread_data *thread_data) {
     thread_data->server_data->raw_map = answer[index + 3];
     if (strlen(thread_data->server_data->raw_map) != thread_data->server_data->mapX * thread_data->server_data->mapY)
         print_error_and_exit(ERROR_MAPFORMAT, 84);
-    thread_data->server_data->raw_map[thread_data->server_data->mapX+1] = NULL;
+    thread_data->server_data->raw_map[thread_data->server_data->mapX+1] = 0;
     if ((check_string_content(thread_data->server_data->raw_map, "_ec")) == false)
         print_error_and_exit(ERROR_MAPFORMAT, 84);
 }
 
-void check_id(char **answer, int array_length, t_thread_data *thread_data) {
+void check_id(char **answer, t_thread_data *thread_data) {
     int index = find_index(answer, "ID");
 
     if (!answer[index + 1] || (sscanf(answer[index + 1], "%zu", &thread_data->server_data->id) != 1)) {
         print_error_and_exit(ERROR_IDFORMAT, 84);
     }
 }
+void check_player(char **answer, int array_length, t_thread_data *thread_data) {
+    (void)array_length;
+    (void)answer;
+    (void)thread_data;
+}
 
 void check_answer(char **answer, t_thread_data *thread_data) {
     int array_length = get_array_length(answer);
     if (find_index(answer, "ID") != 84)
-        check_id(answer, array_length, thread_data);
-    if (find_index(answer, "MAP") != 84) {
-        check_map(answer, array_length, thread_data);
-    }
+        check_id(answer, thread_data);
+    if (find_index(answer, "MAP") != 84)
+        check_map(answer, thread_data);
+    if (find_index(answer, "START") != 84)
+        thread_data->server_data->is_ready = true;
+    if (find_index(answer, "PLAYER") != 84)
+        check_player(answer, array_length, thread_data);
 }
