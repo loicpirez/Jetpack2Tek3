@@ -11,7 +11,7 @@
 #ifndef		SIGNALS_H_
 # define	SIGNALS_H_
 
-#include "signal.h"
+#include <signal.h>
 
 void catch_signal(int signal);
 

@@ -9,11 +9,11 @@
 */
 
 #include <SDL2/SDL.h>
-#include <error.h>
 #include <args.h>
-#include "signals.h"
-#include "thread.h"
-#include "free.h"
+#include <signals.h>
+#include <error.h>
+#include <thread.h>
+#include <free.h>
 
 int main(int argc, char **argv) {
     t_args *args = get_args(argc, argv);

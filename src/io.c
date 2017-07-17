@@ -9,9 +9,7 @@
 */
 
 #include <sys/socket.h>
-#include <malloc.h>
 #include <string.h>
-#include <strings.h>
 #include "network.h"
 #include "error.h"
 

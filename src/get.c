@@ -9,16 +9,10 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <error.h>
 #include <check.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include "strings.h"
-#include "network.h"
 
 void get_first_informations(t_thread_data *thread_data) {
     struct sockaddr_in server;

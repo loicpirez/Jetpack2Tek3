@@ -11,7 +11,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <resolution.h>
-#include <string.h>
 #include <error.h>
 #include "strings.h"
 

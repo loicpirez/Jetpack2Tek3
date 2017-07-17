@@ -9,7 +9,6 @@
 */
 
 #include <stdlib.h>
-#include <ctype.h>
 #include <error.h>
 #include <stdio.h>
 

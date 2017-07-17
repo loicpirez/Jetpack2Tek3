@@ -15,7 +15,6 @@
 #include <network.h>
 #include <strings.h>
 #include <stdio.h>
-#include "args.h"
 
 void check_map(char *reply, t_thread_data *thread_data) {
     char *check;
@@ -54,6 +53,15 @@ void check_id(char *reply, t_thread_data *thread_data) {
     check = strtok(reply, " \n");
     check = strtok(NULL, " \n");
     if (sscanf(check, "%zu\n", &id) != 1)
-    print_error_and_exit(ERROR_MAPFORMAT, 84);
+        print_error_and_exit(ERROR_MAPFORMAT, 84);
     thread_data->server_data->id = id;
+}
+
+void check_answer(char **answer) {
+    int i = 0;
+
+    while (answer[i]) {
+        printf("[%s]\n", answer[i]);
+        i++;
+    }
 }
