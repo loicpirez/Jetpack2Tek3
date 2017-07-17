@@ -14,6 +14,7 @@
 #include <error.h>
 #include <stdio.h>
 #include <args.h>
+#include <string.h>
 
 void check_ip_format(char *ip) {
     int a,b,c,d;
@@ -57,6 +58,8 @@ t_args *get_args(int argc, char **argv) {
     }
     if (port == NULL || ip == NULL)
         print_error_and_exit(ERROR_MISSINGARGS, 84);
+    if (strcmp(ip, "localhost") == 0)
+        ip = "127.0.0.1";
     check_port_format(port);
     check_ip_format(ip);
     args->ip = ip;
