@@ -23,9 +23,7 @@ void graphic(t_thread_data *thread_data) {
                                res->y,
                                SDL_WINDOW_SHOWN);
     if (pWindow) {
-    printf("%d", thread_data->server_data->is_ready);
-//        while (thread_data->server_data->is_ready != true);
-//        SDL_DestroyWindow(pWindow);
+        SDL_DestroyWindow(pWindow);
     }
     else
         print_error_and_exit(ERROR_SDL, 84);
