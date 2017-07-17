@@ -12,7 +12,6 @@
 #include "thread.h"
 
 void free_structs(t_thread_data *thread_data) {
-    free(thread_data->server_data->raw_map);
     free(thread_data->server_data);
     free(thread_data->args);
     free(thread_data);

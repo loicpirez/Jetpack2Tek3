@@ -11,6 +11,29 @@
 #include <stdlib.h>
 #include <error.h>
 #include <stdio.h>
+#include <stdbool.h>
+
+bool check_string_content(char *str, char *letter) {
+    int i = 0;
+    int l = 0;
+    bool okay = false;
+
+    printf("checking: %s", str);
+    while (str[i]) {
+        okay = false;
+        while (letter[l]) {
+            if (str[i] == letter[l]) {
+                okay = true;
+            }
+            l++;
+        }
+        if (okay == false)
+            return (false);
+        i++;
+        l = 0;
+    }
+    return (true);
+}
 
 void remove_char_from_string(char *str, char to_skip) {
     int i = 0;

@@ -26,7 +26,8 @@ enum e_error {
     ERROR_RECV,
     ERROR_MAPFORMAT,
     ERROR_FD,
-    ERROR_BIGPACKET
+    ERROR_BIGPACKET,
+    ERROR_IDFORMAT
 };
 
 void print_error_and_exit(int id, int status);

@@ -11,7 +11,10 @@
 #ifndef		STRING_H_
 # define	STRING_H_
 
+#include <stdbool.h>
+
 size_t check_if_number(char *str, int error);
 void remove_char_from_string(char *input, char to_skip);
+bool check_string_content(char *str, char *letter);
 
 #endif		/* !STRING_H_ */

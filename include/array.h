@@ -11,6 +11,9 @@
 # define	ARRAY_H_
 
 char **split(char *str, char *token);
+int get_array_length(char **array);
+int find_index(char **array, char *str);
+void print_array(char **array);
 
 #endif		/* !ARRAY_H_ */
 

@@ -15,6 +15,38 @@
 #include <malloc.h>
 #include <error.h>
 
+void print_array(char **array) {
+    int i = 0;
+
+    printf("Printing array...\n");
+    while (array[i]) {
+        printf("[%s], ", array[i]);
+        i++;
+    }
+    printf("\n");
+    fflush(0);
+    printf("End of print\n");
+}
+
+int find_index(char **array, char *str) {
+    int i = 0;
+
+    while (array[i]) {
+        if (strcmp(array[i], str) == 0)
+            return (i);
+        i++;
+    }
+    return (84);
+}
+
+int get_array_length(char **array) {
+    int i = 0;
+
+    while (array[i])
+        i++;
+    return (i);
+}
+
 char **split(char *str, char *token) {
     char **array;
     int i = 0;
