@@ -17,7 +17,6 @@
 
 typedef struct s_thread_data
 {
-    pthread_mutex_t locker;
     t_args *args;
     t_server_data *server_data;
 } t_thread_data;

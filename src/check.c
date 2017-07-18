@@ -47,6 +47,38 @@ void check_id(char **answer, t_thread_data *thread_data)
     {
         print_error_and_exit(ERROR_IDFORMAT, 84);
     }
+    thread_data->server_data->id = atoi(answer[index + 1]);
+}
+
+void get_pos(char **answer, t_thread_data *thread_data, int x, int y)
+{
+    int c = 0;
+    char *copy = malloc(sizeof(char) + strlen(thread_data->server_data->raw_map) + 1);
+    int i = 0;
+    strcpy(copy, thread_data->server_data->raw_map);
+    reverse_string(copy);
+    int search_x = 0;
+    int search_y = 0;
+    while (copy[i])
+    {
+        if (search_x == thread_data->server_data->mapX - x && search_y == y)
+        {
+            copy[i] = '_';
+        }
+        if (search_x == thread_data->server_data->mapX - 1)
+        {
+            search_x = 0;
+            search_y++;
+        }
+        else
+        {
+            search_x += 1;
+        }
+        i++;
+        fflush(0);
+    }
+    reverse_string(copy);
+    thread_data->server_data->raw_map = copy;
 }
 
 void check_coin(char **answer, t_thread_data *thread_data)
@@ -60,6 +92,10 @@ void check_coin(char **answer, t_thread_data *thread_data)
         (sscanf(answer[index + 2], "%d", &x) != 1) || !answer[index + 3] || (sscanf(answer[index + 3], "%d", &y) != 1))
     {
         print_error_and_exit(ERROR_COINFORMAT, 84);
+    }
+    else
+    {
+        get_pos(answer, thread_data, x, y);
     }
 }
 
@@ -121,7 +157,6 @@ void check_answer(char **answer, t_thread_data *thread_data)
     }
     if (find_index(answer, "PLAYER") != INDEX_NOT_FOUND)
     {
-        print_array(answer);
         check_player(answer, array_length, thread_data);
     }
     if (find_index(answer, "FINISH") != INDEX_NOT_FOUND)

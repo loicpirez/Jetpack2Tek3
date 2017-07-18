@@ -21,4 +21,8 @@ void remove_char_from_string(char *input, char to_skip);
 
 bool check_string_content(char *str, char *letter);
 
+void reverse_string(char *str);
+
+char *copy_string(const char *source);
+
 #endif        /* !STRING_H_ */

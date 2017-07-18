@@ -19,10 +19,12 @@
 
 void graphic(t_thread_data *thread_data)
 {
-    while (thread_data->server_data->is_ready != true)
-    {
-    }
     char title[25];
+
+    if (thread_data->server_data->id == 0)
+    {
+        while (thread_data->server_data->id == 0);
+    }
     sprintf(title, "jetpack2Tek3 [Player %d]", thread_data->server_data->id);
 
     SDL_Surface *window = NULL;

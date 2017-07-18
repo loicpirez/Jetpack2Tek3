@@ -12,6 +12,7 @@
 #include <error.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
 
 bool check_string_content(char *str, char *letter)
 {
@@ -55,6 +56,48 @@ void remove_char_from_string(char *str, char to_skip)
     }
     str[j] = 0;
 }
+
+char *copy_string(const char *source)
+{
+    int ii = 0;
+    int len = (int) strlen(source);
+    char *copy = malloc((size_t) (len + 1));
+    char *dest = copy;
+
+    while (*source != '\0')
+    {
+        *dest++ = *source++;
+    }
+
+    *dest = '\0';
+    return copy;
+}
+
+void reverse_string(char *str)
+{
+    if (str == 0)
+    {
+        return;
+    }
+
+    if (*str == 0)
+    {
+        return;
+    }
+    char *start = str;
+    char *end = start + strlen(str) - 1;
+    char temp;
+
+    while (end > start)
+    {
+        temp = *start;
+        *start = *end;
+        *end = temp;
+        ++start;
+        --end;
+    }
+}
+
 
 size_t check_if_number(char *str, int error)
 {

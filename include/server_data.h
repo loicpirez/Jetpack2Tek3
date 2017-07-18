@@ -32,6 +32,8 @@ typedef struct s_server_data
     char *raw_map;
     int sock;
     int winner;
+    int coin_x;
+    int coin_y;
 } t_server_data;
 
 t_server_data *init_server_data(void);

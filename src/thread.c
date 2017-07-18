@@ -40,7 +40,6 @@ t_thread_data *create_thread(t_args *args, t_server_data *server_data)
     }
     thread_data->args = args;
     thread_data->server_data = server_data;
-    pthread_mutex_init(&thread_data->locker, NULL);
     get_first_informations(thread_data);
     if (pthread_create(&pGraphic, NULL, graphic_thread, thread_data) == -1 || \
         pthread_create(&pNetwork, NULL, network_thread, thread_data) == -1)
