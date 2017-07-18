@@ -108,3 +108,5 @@ dkms.conf
 \.idea/
 
 client
+
+src/test\.c

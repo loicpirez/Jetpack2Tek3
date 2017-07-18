@@ -15,7 +15,6 @@
 #include <arpa/inet.h>
 #include <stdlib.h>
 #include <string.h>
-#include <display.h>
 
 void get_first_informations(t_thread_data *thread_data)
 {

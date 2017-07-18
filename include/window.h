@@ -14,6 +14,6 @@
 #include "SDL.h"
 #include "network.h"
 
-void draw_window(SDL_Window *window, t_thread_data *thread_data);
+void draw_window(SDL_Surface *window, t_thread_data *thread_data, int block_size);
 
 #endif        /* !WINDOW_H_ */

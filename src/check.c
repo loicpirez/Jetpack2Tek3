@@ -32,7 +32,7 @@ void check_map(char **answer, t_thread_data *thread_data)
     {
         print_error_and_exit(ERROR_MAPFORMAT, 84);
     }
-    thread_data->server_data->raw_map[thread_data->server_data->mapX + 1] = 0;
+    thread_data->server_data->raw_map[thread_data->server_data->mapX * thread_data->server_data->mapY + 1] = 0;
     if ((check_string_content(thread_data->server_data->raw_map, "_ec")) == false)
     {
         print_error_and_exit(ERROR_MAPFORMAT, 84);

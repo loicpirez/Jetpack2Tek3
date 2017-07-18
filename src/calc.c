@@ -13,5 +13,5 @@
 
 int calc_block_size(t_resolution *resolution, t_thread_data *thread_data)
 {
-    return (int) (resolution->x / thread_data->server_data->mapX);
+    return (int) ((resolution->x / thread_data->server_data->mapX) / 2);
 }

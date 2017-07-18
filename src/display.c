@@ -26,5 +26,6 @@ void display_winner_message(t_thread_data *thread_data)
     {
         printf("You loose!\n");
     }
+    fflush(0);
     pthread_mutex_unlock(&thread_data->locker);
 }

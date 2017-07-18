@@ -18,11 +18,11 @@ OBJS	=	$(SRCS:.c=.o)
 
 DEPS	=	$(SRCS:.c=.d)
 
-INCLUDE	=	-I include/ -I /usr/include/SDL2/	\
+INCLUDE	=	-I include/ -I /usr/include/SDL/	\
 
 RM	=	rm -f
 
-LIB	=	-lSDL2 -lpthread
+LIB	=	-lSDL -lpthread
 
 CFLAGS	+=	-W -Wall -pedantic
 

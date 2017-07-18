@@ -8,7 +8,7 @@
 ** Last update Thu Jul 13 15:28:55 2017 Loïc Pirez
 */
 
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include <args.h>
 #include "ratio.h"
 #include <network.h>
@@ -20,26 +20,22 @@
 void graphic(t_thread_data *thread_data)
 {
     while (thread_data->server_data->is_ready != true);
+    char title[25];
+    sprintf(title, "jetpack2Tek3 [Player %d]", thread_data->server_data->id);
 
-    SDL_Window *window = NULL;
-
+    SDL_Surface *window = NULL;
     t_resolution *res = get_current_resolution();
     t_resolution *ratio = calc_aspect_ratio((int) thread_data->server_data->mapX, (int) thread_data->server_data->mapY);
     t_resolution *target_resolution = calc_resolution_from_ratio(res, ratio);
     int block_size = calc_block_size(target_resolution, thread_data);
-    (void) block_size; //TODO
 
-    window = SDL_CreateWindow(
-            "jetpack2Tek3", SDL_WINDOWPOS_CENTERED,
-            SDL_WINDOWPOS_UNDEFINED,
-            target_resolution->x / 2,
-            target_resolution->y / 2,
-            SDL_WINDOW_SHOWN
-    );
+    window = SDL_SetVideoMode(target_resolution->x / 2, target_resolution->y / 2, 32, SDL_HWSURFACE);
+
+    SDL_WM_SetCaption(title, NULL);
 
     if (window)
     {
-        draw_window(window, thread_data);
+        draw_window(window, thread_data, block_size);
     }
     else
     {
