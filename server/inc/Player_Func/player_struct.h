@@ -17,6 +17,7 @@ typedef struct	s_player
   int		x;
   int		y;
   int		score;
+  int		gravity;
 }		t_player;
 
 #endif		//JETPACK2TEK3_2016_PLAYER_STRUCT_H

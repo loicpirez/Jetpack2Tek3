@@ -10,7 +10,7 @@
 
 #include	"Player_Func/init_player.h"
 
-void		init_player(t_player *player)
+void		init_player(t_player *player, int gravity)
 {
   player = malloc(sizeof(t_player));
   if (player == NULL)
@@ -19,4 +19,5 @@ void		init_player(t_player *player)
   player->x = 0;
   player->y = 0;
   player->score = 0;
+  player->gravity = gravity;
 }

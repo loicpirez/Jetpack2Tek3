@@ -10,18 +10,33 @@
 
 #include	"main.h"
 
-int		main(int ac, char **av)
+/*static void	init_all(t_args *args)
 {
   t_map		map;
   t_player	*player;
 
-  (void)ac;
-
   player = malloc(sizeof(t_player) * 2);
-  init_player(&player[0]);
-  init_player(&player[1]);
-  map = init_map(av[1]);
+  init_player(&player[0], args->gravity);
+  init_player(&player[1], args->gravity);
+  map = init_map(args->map_filename);
   (void)player;
   (void)map;
+}*/
+
+int		main(int ac, char **av)
+{
+  t_args	*args;
+
+  args = malloc(sizeof(t_args));
+  if (ac == 7)
+  {
+    args->error = check_arguments(args, ac, av);
+    if (args->error == 1)
+      printf("Invalid arguments\n");
+    //else
+      //init_all(args);
+  }
+  else
+    printf("Invalid arguments\n");
   return (0);
 }

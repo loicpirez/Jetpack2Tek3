@@ -30,6 +30,7 @@ SOCKET	=	src/Sock_Handling/
 CMD	=	src/Sock_Handling/Cmd_Handling/
 
 SRCS	=	$(SRC)main.c \
+		$(SRC)check_arguments.c \
 		$(MAP)init_map.c \
 		$(MAP)open_file.c \
 		$(MAP)check_line.c \
