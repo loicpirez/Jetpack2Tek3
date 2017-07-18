@@ -14,3 +14,4 @@ src/server_data.c
 src/free.c
 src/signals.c
 src/array.c
+src/ratio.c

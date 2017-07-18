@@ -9,32 +9,32 @@
 */
 
 #include <SDL2/SDL.h>
-#include <error.h>
 #include <args.h>
-#include <zconf.h>
+#include "ratio.h"
 #include <network.h>
 #include <graphical.h>
+#include <error.h>
 #include "resolution.h"
 
-/*void FillRect(int x, int y, int w, int h, int color) {
-    SDL_Rect rect = {x,y,w,h};
-    SDL_FillRect(screen, &rect, color);
-}*/
-
 void graphic(t_thread_data *thread_data) {
-    t_resolution *res = get_current_resolution();
+
     SDL_Window *window = NULL;
     SDL_Renderer *background_renderer = NULL;
     SDL_Renderer *coin_renderer = NULL;
 
     SDL_Event events;
     while (thread_data->server_data->is_ready != true);
-    int block_size = (int) ((res->x / 2) / thread_data->server_data->mapX);
 
+    t_resolution *res = get_current_resolution();
+    t_resolution *ratio = calc_aspect_ratio((int) thread_data->server_data->mapX, (int) thread_data->server_data->mapY);
+    int block_size = (int) ((res->x / 2) / thread_data->server_data->mapX);
+    t_resolution *target_resolution = calc_resolution_from_ratio(res, ratio);
+    free(res);
+    free(ratio);
     window = SDL_CreateWindow("jetpack2Tek3", SDL_WINDOWPOS_CENTERED,
                               SDL_WINDOWPOS_UNDEFINED,
-                              res->x / 2,
-                              res->y / 2,
+                              target_resolution->x / 2,
+                              target_resolution->y / 2,
                               SDL_WINDOW_SHOWN);
     background_renderer = SDL_CreateRenderer(window, -1, 0);
     SDL_SetRenderDrawColor(background_renderer, COLOR_B);
@@ -81,5 +81,6 @@ void graphic(t_thread_data *thread_data) {
         pthread_mutex_unlock(&thread_data->verrou);
     } else
         print_error_and_exit(ERROR_SDL, 84);
+    free(target_resolution);
     exit(0);
 }
