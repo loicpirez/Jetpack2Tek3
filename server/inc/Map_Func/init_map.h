@@ -18,6 +18,6 @@
 
 FILE		*open_file(char *filename);
 int		check_line(char *buff);
-void		add_line(t_map *map, char *buff, int cpt);
+void		add_line(t_map *map, char *buff, size_t cpt);
 
 #endif		//JETPACK2TEK3_2016_INIT_MAP_H

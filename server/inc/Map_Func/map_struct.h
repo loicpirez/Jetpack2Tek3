@@ -13,8 +13,8 @@
 
 typedef struct	s_map
 {
-  int		height;
-  int		width;
+  size_t	height;
+  size_t	width;
   char		**map;
 }		t_map;
 

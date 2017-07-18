@@ -10,7 +10,7 @@
 
 #include	"Map_Func/add_line.h"
 
-void		add_line(t_map *map, char *buff, int cpt) 
+void		add_line(t_map *map, char *buff, size_t cpt)
 {
   map->map = realloc(map->map, sizeof(char *) * (cpt + 2));
   if (map->map == NULL)
@@ -18,5 +18,4 @@ void		add_line(t_map *map, char *buff, int cpt)
   map->map[cpt] = malloc(sizeof(char));
   map->map[cpt][0] = 0;
   map->map[cpt] = strdup(buff);
-  printf("%s\n", map->map[cpt]);
 }

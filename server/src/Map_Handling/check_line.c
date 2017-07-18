@@ -21,7 +21,7 @@ int		check_line(char *buff)
     	(buff[cpt] != '_' && buff[cpt] != 'e' && \
 	buff[cpt] != 'c' && buff[cpt] != '\n'))
     {
-      printf("Invalid map\n");
+      dprintf(2, "Invalid map\n");
       return (-1);
     }
     cpt++;

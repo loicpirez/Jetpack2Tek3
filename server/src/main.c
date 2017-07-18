@@ -10,7 +10,7 @@
 
 #include	"main.h"
 
-/*static void	init_all(t_args *args)
+static void	init_all(t_args *args)
 {
   t_map		map;
   t_player	*player;
@@ -21,7 +21,7 @@
   map = init_map(args->map_filename);
   (void)player;
   (void)map;
-}*/
+}
 
 int		main(int ac, char **av)
 {
@@ -32,11 +32,11 @@ int		main(int ac, char **av)
   {
     args->error = check_arguments(args, ac, av);
     if (args->error == 1)
-      printf("Invalid arguments\n");
-    //else
-      //init_all(args);
+      dprintf(2, "Invalid arguments\n");
+    else
+      init_all(args);
   }
   else
-    printf("Invalid arguments\n");
+    dprintf(2, "Invalid arguments\n");
   return (0);
 }

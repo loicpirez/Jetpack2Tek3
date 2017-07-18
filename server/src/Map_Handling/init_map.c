@@ -10,9 +10,29 @@
 
 #include	"Map_Func/init_map.h"
 
-t_map		init_map(char *filename)
+static void	check_valid_map(t_map *map)
 {
   int		cpt;
+  size_t	len;
+
+  cpt = 0;
+  while (map->map[cpt] != NULL)
+  {
+    len = strlen(map->map[cpt]);
+    if (map->map[cpt+1] != NULL)
+      len--;
+    if (len != map->width)
+    {
+      dprintf(2, "Invalid map\n");
+      exit(0);
+    }
+    cpt++;
+  }
+}
+
+t_map		init_map(char *filename)
+{
+  size_t	cpt;
   size_t	size;
   char		*buff;
   FILE		*fd;
@@ -28,11 +48,14 @@ t_map		init_map(char *filename)
   {
     if (check_line(buff) == 0)
       add_line(&map, buff, cpt);
+    else
+      exit(0);
     cpt++;
   }
-  map.width = cpt;
-  map.height = (int)(strlen(map.map[0]) - 1);
+  map.height = cpt;
+  map.width = strlen(map.map[0]) - 1;
   map.map[cpt] = NULL;
+  check_valid_map(&map);
   fclose(fd);
   return (map);
 }
