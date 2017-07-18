@@ -89,13 +89,13 @@ void check_end(char **answer, t_thread_data *thread_data)
 void check_answer(char **answer, t_thread_data *thread_data)
 {
     int array_length = get_array_length(answer);
-    if (find_index(answer, "START") != INDEX_NOT_FOUND)
-    {
-        thread_data->server_data->is_ready = true;
-    }
     if (find_index(answer, "ID") != INDEX_NOT_FOUND)
     {
         check_id(answer, thread_data);
+    }
+    if (find_index(answer, "START") != INDEX_NOT_FOUND)
+    {
+        thread_data->server_data->is_ready = true;
     }
     if (find_index(answer, "MAP") != INDEX_NOT_FOUND)
     {
@@ -103,6 +103,7 @@ void check_answer(char **answer, t_thread_data *thread_data)
     }
     if (find_index(answer, "PLAYER") != INDEX_NOT_FOUND)
     {
+        print_array(answer);
         check_player(answer, array_length, thread_data);
     }
     if (find_index(answer, "FINISH") != INDEX_NOT_FOUND)

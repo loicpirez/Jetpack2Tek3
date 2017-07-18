@@ -56,21 +56,22 @@ void get_player_informations(char **answer, char *number, t_thread_data *thread_
                 }
                 if (playernb == 1)
                 {
-                    thread_data->server_data->player_one_x = y;
+                    thread_data->server_data->player_one_x = x;
                     thread_data->server_data->player_one_y = y;
                     thread_data->server_data->player_one_points = points;
                 }
                 if (playernb == 2)
                 {
-                    thread_data->server_data->player_two_x = y;
+                    thread_data->server_data->player_two_x = x;
                     thread_data->server_data->player_two_y = y;
                     thread_data->server_data->player_two_points = points;
                 }
-                break;
+                else
+                    break;
             }
             else
             {
-                print_error_and_exit(ERROR_PLAYERFORMAT, 84);
+                     print_error_and_exit(ERROR_PLAYERFORMAT, 84);
             }
         }
         i++;
