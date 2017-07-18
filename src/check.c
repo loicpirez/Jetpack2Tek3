@@ -17,6 +17,7 @@
 #include <stdio.h>
 #include <array.h>
 #include <get.h>
+#include <check.h>
 
 void check_map(char **answer, t_thread_data *thread_data)
 {
@@ -42,7 +43,6 @@ void check_map(char **answer, t_thread_data *thread_data)
 void check_id(char **answer, t_thread_data *thread_data)
 {
     int index = find_index(answer, "ID");
-
     if (!answer[index + 1] || (sscanf(answer[index + 1], "%d", &thread_data->server_data->id) != 1))
     {
         print_error_and_exit(ERROR_IDFORMAT, 84);
@@ -89,23 +89,23 @@ void check_end(char **answer, t_thread_data *thread_data)
 void check_answer(char **answer, t_thread_data *thread_data)
 {
     int array_length = get_array_length(answer);
-    if (find_index(answer, "START") != 84)
+    if (find_index(answer, "START") != INDEX_NOT_FOUND)
     {
         thread_data->server_data->is_ready = true;
     }
-    if (find_index(answer, "ID") != 84)
+    if (find_index(answer, "ID") != INDEX_NOT_FOUND)
     {
         check_id(answer, thread_data);
     }
-    if (find_index(answer, "MAP") != 84)
+    if (find_index(answer, "MAP") != INDEX_NOT_FOUND)
     {
         check_map(answer, thread_data);
     }
-    if (find_index(answer, "PLAYER") != 84)
+    if (find_index(answer, "PLAYER") != INDEX_NOT_FOUND)
     {
         check_player(answer, array_length, thread_data);
     }
-    if (find_index(answer, "FINISH") != 84)
+    if (find_index(answer, "FINISH") != INDEX_NOT_FOUND)
     {
         check_end(answer, thread_data);
     }

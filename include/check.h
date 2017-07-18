@@ -19,6 +19,6 @@ void check_id(char **answer, t_thread_data *thread_data);
 
 void check_answer(char **answer, t_thread_data *thread_data);
 
-void check_map(char *reply, t_thread_data *thread_data);
+void check_map(char **answer, t_thread_data *thread_data);
 
 #endif        /* !CHECK_H_ */

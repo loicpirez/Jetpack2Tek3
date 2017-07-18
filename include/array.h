@@ -10,6 +10,8 @@
 #ifndef        ARRAY_H_
 # define    ARRAY_H_
 
+#define INDEX_NOT_FOUND 84
+
 char **split(char *str, char *token);
 
 int get_array_length(char **array);

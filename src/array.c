@@ -14,6 +14,7 @@
 #include <strings.h>
 #include <malloc.h>
 #include <error.h>
+#include <array.h>
 
 void print_array(char **array)
 {
@@ -42,7 +43,7 @@ int find_index(char **array, char *str)
         }
         i++;
     }
-    return (84);
+    return (INDEX_NOT_FOUND);
 }
 
 

@@ -32,8 +32,6 @@ void network(t_thread_data *thread_data)
     }
     while (thread_data->server_data->is_finish != true)
     {
-//        printf("[%d] Network loop\n", thread_data->server_data->id);
-  //      fflush(0);
         if (thread_data->server_data->is_finish == true)
         {
             break;

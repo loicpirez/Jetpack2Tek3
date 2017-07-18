@@ -20,8 +20,6 @@
 void graphic(t_thread_data *thread_data)
 {
     while (thread_data->server_data->is_ready != true) {
-        //printf("[%d] Is ready loop\n", thread_data->server_data->id);
-        //fflush(0);
     }
     char title[25];
     sprintf(title, "jetpack2Tek3 [Player %d]", thread_data->server_data->id);
