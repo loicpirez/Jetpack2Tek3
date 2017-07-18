@@ -8,12 +8,12 @@
 ** Last update Mon Jul 17 15:17:48 2017 Loïc Pirez
 */
 
-#ifndef		SIGNALS_H_
-# define	SIGNALS_H_
+#ifndef        SIGNALS_H_
+# define    SIGNALS_H_
 
 #include <signal.h>
 
 void catch_signal(int signal);
 
-#endif		/* !SIGNALS_H_ */
+#endif        /* !SIGNALS_H_ */
 

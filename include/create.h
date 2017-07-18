@@ -8,9 +8,9 @@
 ** Last update Sat Jul 15 22:40:25 2017 Loïc Pirez
 */
 
-#ifndef		CREATE_H_
-# define	CREATE_H_
+#ifndef        CREATE_H_
+# define    CREATE_H_
 
 void create_map(t_thread_data *thread_data);
 
-#endif		/* !CREATE_H_ */
+#endif        /* !CREATE_H_ */

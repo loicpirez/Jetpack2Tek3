@@ -8,10 +8,11 @@
 ** Last update Thu Jul 13 15:23:41 2017 Loïc Pirez
 */
 
-#ifndef		USAGE_H_
-# define	USAGE_H_
+#ifndef        USAGE_H_
+# define    USAGE_H_
 
-void        check_ip_format(char *ip);
-void		print_usage(char *name);
+void check_ip_format(char *ip);
 
-#endif		/* !USAGE_H_ */
+void print_usage(char *name);
+
+#endif        /* !USAGE_H_ */

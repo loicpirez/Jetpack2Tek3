@@ -8,13 +8,15 @@
 ** Last update Fri Jul 14 13:19:03 2017 Loïc Pirez
 */
 
-#ifndef		RATIO_H_
-# define	RATIO_H_
+#ifndef        RATIO_H_
+# define    RATIO_H_
 
 #include "resolution.h"
 
 int gcd(int a, int b);
+
 t_resolution *calc_aspect_ratio(int width, int height);
+
 t_resolution *calc_resolution_from_ratio(t_resolution *current_resolution, t_resolution *aspect_ratio);
 
-#endif		/* !RATIO_H_ */
+#endif        /* !RATIO_H_ */

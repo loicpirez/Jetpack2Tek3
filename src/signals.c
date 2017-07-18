@@ -12,11 +12,12 @@
 #include <signal.h>
 #include <stdio.h>
 
-void catch_signal(int signal) {
+void catch_signal(int signal)
+{
     if (signal == SIGINT)
     {
         printf("\nCatched SIGINT. Aborting...\n");
         fflush(0);
-        exit (0);
+        exit(0);
     }
 }

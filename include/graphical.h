@@ -8,8 +8,8 @@
 ** Last update Thu Jul 13 15:23:41 2017 Loïc Pirez
 */
 
-#ifndef		GRAPHICAL_H_
-# define	GRAPHICAL_H_
+#ifndef        GRAPHICAL_H_
+# define    GRAPHICAL_H_
 
 #define COLOR_B  6, 20, 57, 255
 #define COLOR_E  "0x49F5FC"
@@ -19,6 +19,6 @@
 
 #include "thread.h"
 
-void		graphic(t_thread_data *thread_data);
+void graphic(t_thread_data *thread_data);
 
-#endif		/* !GRAPHICAL_H_ */
+#endif        /* !GRAPHICAL_H_ */

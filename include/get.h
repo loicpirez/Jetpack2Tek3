@@ -8,10 +8,11 @@
 ** Last update Mon Jul 17 09:38:48 2017 Loïc Pirez
 */
 
-#ifndef		GET_H_
-# define	GET_H_
+#ifndef        GET_H_
+# define    GET_H_
 
 void get_first_informations(t_thread_data *thread_data);
+
 void get_player_informations(char **answer, char *number, t_thread_data *thread_data);
 
-#endif		/* !GET_H_ */
+#endif        /* !GET_H_ */

@@ -8,10 +8,11 @@
 ** Last update Thu Jul 13 15:23:41 2017 Loïc Pirez
 */
 
-#ifndef		ERROR_H_
-# define	ERROR_H_
+#ifndef        ERROR_H_
+# define    ERROR_H_
 
-enum e_error {
+enum e_error
+{
     ERROR_MALLOC,
     ERROR_SDL,
     ERROR_COMMAND,
@@ -33,6 +34,7 @@ enum e_error {
 };
 
 void print_error_and_exit(int id, int status);
+
 void print_err(char *msg);
 
-#endif		/* !ERROR_H_ */
+#endif        /* !ERROR_H_ */

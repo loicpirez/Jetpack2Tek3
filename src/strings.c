@@ -13,33 +13,42 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-bool check_string_content(char *str, char *letter) {
+bool check_string_content(char *str, char *letter)
+{
     int i = 0;
     int l = 0;
     bool okay = false;
 
-    while (str[i]) {
+    while (str[i])
+    {
         okay = false;
-        while (letter[l]) {
-            if (str[i] == letter[l]) {
+        while (letter[l])
+        {
+            if (str[i] == letter[l])
+            {
                 okay = true;
             }
             l++;
         }
         if (okay == false)
+        {
             return (false);
+        }
         i++;
         l = 0;
     }
     return (true);
 }
 
-void remove_char_from_string(char *str, char to_skip) {
+void remove_char_from_string(char *str, char to_skip)
+{
     int i = 0;
     int j = 0;
 
-    while (str[i]) {
-        if (str[i] != to_skip) {
+    while (str[i])
+    {
+        if (str[i] != to_skip)
+        {
             str[j++] = str[i];
         }
         i++;
@@ -47,12 +56,17 @@ void remove_char_from_string(char *str, char to_skip) {
     str[j] = 0;
 }
 
-size_t check_if_number(char *str, int error) {
+size_t check_if_number(char *str, int error)
+{
     size_t nb;
 
     if (sscanf(str, "%zu", &nb) != 1)
+    {
         print_error_and_exit(error, 84);
+    }
     else
+    {
         return (nb);
+    }
     return (0);
 }

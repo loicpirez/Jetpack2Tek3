@@ -8,16 +8,17 @@
 ** Last update Fri Jul 14 13:19:03 2017 Loïc Pirez
 */
 
-#ifndef		ARGS_H_
-# define	ARGS_H_
+#ifndef        ARGS_H_
+# define    ARGS_H_
 
 #include "server_data.h"
 
-typedef struct s_args {
+typedef struct s_args
+{
     int port;
     char *ip;
-}              t_args;
+} t_args;
 
 t_args *get_args(int argc, char **argv);
 
-#endif		/* !ARGS_H_ */
+#endif        /* !ARGS_H_ */

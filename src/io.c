@@ -13,7 +13,10 @@
 #include "network.h"
 #include "error.h"
 
-void ask_server(int sock, char *msg) {
+void ask_server(int sock, char *msg)
+{
     if (send(sock, msg, strlen(msg), MSG_DONTWAIT) < 0)
+    {
         print_error_and_exit(ERROR_SEND, 84);
+    }
 }

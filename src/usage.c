@@ -11,8 +11,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void print_usage(char *name) {
+void print_usage(char *name)
+{
     fprintf(stderr, "USAGE\n\t%s -h IP -p PORT\n", name);
     fprintf(stderr, "EXEMPLE\n\t%s -h 127.0.0.1 -p 4242\n", name);
-    exit (84);
+    exit(84);
 }

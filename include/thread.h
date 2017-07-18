@@ -8,20 +8,21 @@
 ** Last update Thu Jul 13 15:23:41 2017 Loïc Pirez
 */
 
-#ifndef		THREAD_H_
-# define	THREAD_H_
+#ifndef        THREAD_H_
+# define    THREAD_H_
 
 #include "args.h"
 
 #include <pthread.h>
 
-typedef struct s_thread_data {
-    pthread_mutex_t verrou;
+typedef struct s_thread_data
+{
+    pthread_mutex_t locker;
     t_args *args;
     t_server_data *server_data;
-}   t_thread_data;
+} t_thread_data;
 
 
-t_thread_data		*create_thread(t_args *args, t_server_data *server_data);
+t_thread_data *create_thread(t_args *args, t_server_data *server_data);
 
-#endif		/* !THREAD_H_ */
+#endif        /* !THREAD_H_ */

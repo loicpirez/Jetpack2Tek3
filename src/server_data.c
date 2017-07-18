@@ -13,11 +13,14 @@
 #include <stdbool.h>
 #include "server_data.h"
 
-t_server_data *init_server_data(void) {
+t_server_data *init_server_data(void)
+{
     t_server_data *server_data;
 
     if ((server_data = malloc(sizeof(t_server_data))) == NULL)
+    {
         print_error_and_exit(ERROR_MALLOC, 84);
+    }
     server_data->mapX = 0;
     server_data->mapY = 0;
     server_data->raw_map = 0;

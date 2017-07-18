@@ -11,11 +11,16 @@
 #include <stdlib.h>
 #include "thread.h"
 
-void free_structs(t_thread_data *thread_data) {
+void free_structs(t_thread_data *thread_data)
+{
     if (thread_data->server_data)
+    {
         free(thread_data->server_data);
+    }
     if (thread_data->args)
+    {
         free(thread_data->args);
+    }
     free(thread_data);
-    exit (0);
+    exit(0);
 }

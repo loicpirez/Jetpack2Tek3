@@ -8,14 +8,15 @@
 ** Last update Thu Jul 13 15:23:41 2017 Loïc Pirez
 */
 
-#ifndef		RESOLUTION_H_
-# define	RESOLUTION_H_
+#ifndef        RESOLUTION_H_
+# define    RESOLUTION_H_
 
-typedef struct s_resolution {
-    int        x;
-    int        y;
-}              t_resolution;
+typedef struct s_resolution
+{
+    int x;
+    int y;
+} t_resolution;
 
-t_resolution	*get_current_resolution(void);
+t_resolution *get_current_resolution(void);
 
-#endif		/* !RESOLUTION_H_ */
+#endif        /* !RESOLUTION_H_ */
