@@ -18,7 +18,7 @@ OBJS	=	$(SRCS:.c=.o)
 
 DEPS	=	$(SRCS:.c=.d)
 
-INCLUDE	=	-I include/	\
+INCLUDE	=	-I include/ -I /usr/include/SDL2/	\
 
 RM	=	rm -f
 

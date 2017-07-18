@@ -2,6 +2,8 @@ src/args.c
 src/array.c
 src/calc.c
 src/check.c
+src/display.c
+src/event.c
 src/error.c
 src/free.c
 src/get.c
@@ -16,3 +18,4 @@ src/signals.c
 src/strings.c
 src/thread.c
 src/usage.c
+src/window.c
