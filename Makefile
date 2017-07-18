@@ -8,6 +8,8 @@
 ## Last update Thu Jul 13 13:59:42 2017 Loïc Pirez
 ##
 
+CC	?=	gcc
+
 NAME	=	client
 
 SRCS	=	$(shell cat sources.mk)
@@ -20,29 +22,28 @@ INCLUDE	=	-I include/	\
 
 RM	=	rm -f
 
-CFLAGS	+=	-W -Wall -pedantic -lSDL2 -lpthread
+LIB	=	-lSDL2 -lpthread
 
-CFLAGS	+=	$(INCLUDE)	\
-
-CC	=	gcc
+CFLAGS	+=	-W -Wall -pedantic
 
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+		$(CC) $(LIB) $(OBJS) -o $(NAME)
 
 clean:
 		$(RM) $(OBJS)
 
-debug:		CFLAGS += -g
+debug:	CFLAGS += -g
 
-debug:		fclean
-
-debug:		all
+debug: all
 
 fclean:		clean
 		$(RM) $(NAME)
 
 re:		fclean all
+
+.c.o:
+		$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 .PHONY:		all clean fclean re

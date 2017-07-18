@@ -14,7 +14,7 @@
 
 void print_to_stderr(char *msg)
 {
-    fprintf(stderr, msg);
+    fprintf(stderr, "%s", msg);
     fflush(0);
 }
 

@@ -30,8 +30,8 @@ void *network_thread(void *arg)
 
 t_thread_data *create_thread(t_args *args, t_server_data *server_data)
 {
-    pthread_t pGraphic;
-    pthread_t pNetwork;
+    pthread_t pGraphic = 0;
+    pthread_t pNetwork = 0;
     t_thread_data *thread_data;
 
     if ((thread_data = malloc(sizeof(t_thread_data))) == NULL)
