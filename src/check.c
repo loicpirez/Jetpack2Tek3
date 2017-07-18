@@ -49,6 +49,20 @@ void check_id(char **answer, t_thread_data *thread_data)
     }
 }
 
+void check_coin(char **answer, t_thread_data *thread_data)
+{
+    int index = find_index(answer, "COIN");
+    int nb_player = 0;
+    int x = 0;
+    int y = 0;
+
+    if (!answer[index + 1] || (sscanf(answer[index + 1], "%d", &nb_player) != 1) || !answer[index + 2] ||
+        (sscanf(answer[index + 2], "%d", &x) != 1) || !answer[index + 3] || (sscanf(answer[index + 3], "%d", &y) != 1))
+    {
+        print_error_and_exit(ERROR_COINFORMAT, 84);
+    }
+}
+
 void check_player(char **answer, int array_length, t_thread_data *thread_data)
 {
     if (array_length < MAX_WORDS - 2)
@@ -100,6 +114,10 @@ void check_answer(char **answer, t_thread_data *thread_data)
     if (find_index(answer, "MAP") != INDEX_NOT_FOUND)
     {
         check_map(answer, thread_data);
+    }
+    if (find_index(answer, "COIN") != INDEX_NOT_FOUND)
+    {
+        check_coin(answer, thread_data);
     }
     if (find_index(answer, "PLAYER") != INDEX_NOT_FOUND)
     {

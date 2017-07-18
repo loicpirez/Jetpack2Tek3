@@ -13,7 +13,7 @@
 
 void display_winner_message(t_thread_data *thread_data)
 {
-    pthread_mutex_lock(&thread_data->locker);
+
     if (thread_data->server_data->winner == -1)
     {
         printf("Nobody wins\n");
@@ -27,5 +27,5 @@ void display_winner_message(t_thread_data *thread_data)
         printf("You loose!\n");
     }
     fflush(0);
-    pthread_mutex_unlock(&thread_data->locker);
+
 }

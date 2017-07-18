@@ -13,7 +13,7 @@
 
 void do_fire(SDL_Event event, t_thread_data *thread_data)
 {
-    pthread_mutex_lock(&thread_data->locker);
+
     if (event.type == SDL_KEYDOWN)
     {
         ask_server(thread_data->server_data->sock, "FIRE 1\n");
@@ -22,5 +22,5 @@ void do_fire(SDL_Event event, t_thread_data *thread_data)
     {
         ask_server(thread_data->server_data->sock, "FIRE 0\n");
     }
-    pthread_mutex_unlock(&thread_data->locker);
+
 }

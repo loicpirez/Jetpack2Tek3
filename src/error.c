@@ -84,6 +84,10 @@ void print_error_and_exit(int id, int status)
     {
         print_to_stderr("Wrong format received for server (Player).\n");
     }
+    if (id == ERROR_COINFORMAT)
+    {
+        print_to_stderr("Wrong format received for server (Coin).\n");
+    }
     if (id == ERROR_ENDFORMAT)
     {
         print_to_stderr("Wrong format received for server (Finish).\n");

@@ -43,9 +43,9 @@ void network(t_thread_data *thread_data)
         else if (status != 0)
         {
             output = split(reply, " \n");
-            pthread_mutex_lock(&thread_data->locker);
+
             check_answer(output, thread_data);
-            pthread_mutex_unlock(&thread_data->locker);
+
             if ((reply = malloc(sizeof(char) + BUFFER_SIZE)) == NULL)
             {
                 print_error_and_exit(ERROR_MALLOC, 84);

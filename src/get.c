@@ -67,11 +67,13 @@ void get_player_informations(char **answer, char *number, t_thread_data *thread_
                     thread_data->server_data->player_two_points = points;
                 }
                 else
+                {
                     break;
+                }
             }
             else
             {
-                     print_error_and_exit(ERROR_PLAYERFORMAT, 84);
+                print_error_and_exit(ERROR_PLAYERFORMAT, 84);
             }
         }
         i++;

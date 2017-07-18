@@ -30,7 +30,8 @@ enum e_error
     ERROR_BIGPACKET,
     ERROR_IDFORMAT,
     ERROR_PLAYERFORMAT,
-    ERROR_ENDFORMAT
+    ERROR_ENDFORMAT,
+    ERROR_COINFORMAT
 };
 
 void print_error_and_exit(int id, int status);
