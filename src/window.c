@@ -19,6 +19,7 @@ void draw_map(SDL_Surface *window, SDL_Surface *coin, SDL_Surface *electric_wall
     int i = 0;
     size_t x = 0;
     size_t y = 0;
+    SDL_FillRect(window, NULL, SDL_MapRGB(window->format, COLOR_B));
 
     position.x = 0;
     position.y = 0;
@@ -55,7 +56,6 @@ void draw_window(SDL_Surface *window, t_thread_data *thread_data, int block_size
     electric_wall = SDL_CreateRGBSurface(SDL_HWSURFACE, block_size, block_size, 32, 0, 0, 0, 0);
     player_one = SDL_CreateRGBSurface(SDL_HWSURFACE, block_size, block_size, 32, 0, 0, 0, 0);
     player_two = SDL_CreateRGBSurface(SDL_HWSURFACE, block_size, block_size, 32, 0, 0, 0, 0);
-    SDL_FillRect(window, NULL, SDL_MapRGB(window->format, COLOR_B));
     SDL_FillRect(coin, NULL, SDL_MapRGB(window->format, COLOR_C));
     SDL_FillRect(electric_wall, NULL, SDL_MapRGB(window->format, COLOR_E));
     SDL_FillRect(player_one, NULL, SDL_MapRGB(window->format, COLOR_P1));
