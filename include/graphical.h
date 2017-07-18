@@ -14,8 +14,8 @@
 #define COLOR_B  6, 20, 57
 #define COLOR_E  73, 245, 252
 #define COLOR_C  242, 220, 58
-#define COLOR_P1 "0x0EE228"
-#define COLOR_P2 "0xD70903"
+#define COLOR_P1 14, 226, 2
+#define COLOR_P2 215, 9, 0
 
 #include "thread.h"
 

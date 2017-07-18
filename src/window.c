@@ -12,29 +12,20 @@
 #include "display.h"
 #include "event.h"
 
-void fill_surfaces(SDL_Surface *window, SDL_Surface *coin, SDL_Surface *electric_wall)
-{
-    SDL_FillRect(window, NULL, SDL_MapRGB(window->format, COLOR_B));
-    SDL_FillRect(coin, NULL, SDL_MapRGB(window->format, COLOR_C));
-    SDL_FillRect(electric_wall, NULL, SDL_MapRGB(window->format, COLOR_E));
-}
-
 void draw_map(SDL_Surface *window, SDL_Surface *coin, SDL_Surface *electric_wall, t_thread_data *thread_data, int block_size)
 {
     SDL_Rect position;
+    char *tmp = thread_data->server_data->raw_map;
+    int i = 0;
+    size_t x = 0;
+    size_t y = 0;
+    SDL_FillRect(window, NULL, SDL_MapRGB(window->format, COLOR_B));
+
     position.x = 0;
     position.y = 0;
-    char *tmp = thread_data->server_data->raw_map;
-
-    int i = 0; // x ----------
-    size_t x = 0; //y ||||||||||
-    size_t y = 0;
-
     while (tmp[i]) {
-        putchar(tmp[i]);
         if (x == thread_data->server_data->mapX - 1)
         {
-            putchar('\n');
             x = 0;
             y++;
         }
@@ -42,8 +33,8 @@ void draw_map(SDL_Surface *window, SDL_Surface *coin, SDL_Surface *electric_wall
         {
             x++;
         }
-        position.x = (Sint16) (x * 20);
-        position.y = (Sint16) (y * 20);
+        position.x = (Sint16) (x * block_size);
+        position.y = (Sint16) (y * block_size);
         if (tmp[i] == 'e')
             SDL_BlitSurface(electric_wall, NULL, window, &position);
         else if (tmp[i] == 'c')
@@ -57,14 +48,22 @@ void draw_window(SDL_Surface *window, t_thread_data *thread_data, int block_size
     SDL_Event event;
     SDL_Surface *coin;
     SDL_Surface *electric_wall;
+    SDL_Surface *player_one;
+    SDL_Surface *player_two;
     bool lock = false;
 
     coin = SDL_CreateRGBSurface(SDL_HWSURFACE, block_size, block_size, 32, 0, 0, 0, 0);
     electric_wall = SDL_CreateRGBSurface(SDL_HWSURFACE, block_size, block_size, 32, 0, 0, 0, 0);
-    fill_surfaces(window, coin, electric_wall);
-    draw_map(window, coin, electric_wall, thread_data, block_size);
+    player_one = SDL_CreateRGBSurface(SDL_HWSURFACE, block_size, block_size, 32, 0, 0, 0, 0);
+    player_two = SDL_CreateRGBSurface(SDL_HWSURFACE, block_size, block_size, 32, 0, 0, 0, 0);
+    SDL_FillRect(coin, NULL, SDL_MapRGB(window->format, COLOR_C));
+    SDL_FillRect(electric_wall, NULL, SDL_MapRGB(window->format, COLOR_E));
+    SDL_FillRect(player_one, NULL, SDL_MapRGB(window->format, COLOR_P1));
+    SDL_FillRect(player_two, NULL, SDL_MapRGB(window->format, COLOR_P2));
+
     while (thread_data->server_data->is_finish != true)
     {
+        draw_map(window, coin, electric_wall, thread_data, block_size);
         SDL_PollEvent(&event);
         pthread_mutex_lock(&thread_data->locker);
         if (thread_data->server_data->is_finish == true || event.type == SDL_QUIT)
@@ -76,6 +75,7 @@ void draw_window(SDL_Surface *window, t_thread_data *thread_data, int block_size
         do_fire(event, thread_data);
 
         SDL_Flip(window);
+        SDL_FillRect(window, NULL, 0x000000);
     }
     if (lock == true)
     {

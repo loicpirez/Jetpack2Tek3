@@ -89,6 +89,10 @@ void check_end(char **answer, t_thread_data *thread_data)
 void check_answer(char **answer, t_thread_data *thread_data)
 {
     int array_length = get_array_length(answer);
+    if (find_index(answer, "START") != 84)
+    {
+        thread_data->server_data->is_ready = true;
+    }
     if (find_index(answer, "ID") != 84)
     {
         check_id(answer, thread_data);
@@ -96,10 +100,6 @@ void check_answer(char **answer, t_thread_data *thread_data)
     if (find_index(answer, "MAP") != 84)
     {
         check_map(answer, thread_data);
-    }
-    if (find_index(answer, "START") != 84)
-    {
-        thread_data->server_data->is_ready = true;
     }
     if (find_index(answer, "PLAYER") != 84)
     {
