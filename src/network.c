@@ -14,7 +14,7 @@
 #include <string.h>
 #include <error.h>
 #include <check.h>
-#include "network.h"
+#include <display.h>
 #include "array.h"
 
 void network(t_thread_data *thread_data)
@@ -23,9 +23,9 @@ void network(t_thread_data *thread_data)
     char **output = NULL;
     char *reply;
 
-    ask_server(thread_data->server_data->sock, "ID\n");
-    ask_server(thread_data->server_data->sock, "MAP\n");
-    ask_server(thread_data->server_data->sock, "READY\n");
+    ask_server(thread_data, "ID\n");
+    ask_server(thread_data, "MAP\n");
+    ask_server(thread_data, "READY\n");
     if ((reply = malloc(sizeof(char) + BUFFER_SIZE)) == NULL)
     {
         print_error_and_exit(ERROR_MALLOC, 84);
@@ -38,6 +38,10 @@ void network(t_thread_data *thread_data)
         }
         if ((status = recv(thread_data->server_data->sock, reply, BUFFER_SIZE, 0)) == -1)
         {
+            if (thread_data->server_data->is_finish == 1)
+            {
+                display_winner_message(thread_data);
+            }
             print_error_and_exit(ERROR_RECV, 84);
         }
         else if (status != 0)

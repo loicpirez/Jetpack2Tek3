@@ -10,11 +10,16 @@
 
 #include <sys/socket.h>
 #include <string.h>
-#include "network.h"
+#include <display.h>
 #include "error.h"
 
-void ask_server(int sock, char *msg)
+void ask_server(t_thread_data *thread_data, char *msg)
 {
+    int sock = thread_data->server_data->sock;
+    if (thread_data->server_data->is_finish == 1)
+    {
+        display_winner_message(thread_data);
+    }
     if (send(sock, msg, strlen(msg), MSG_DONTWAIT) < 0)
     {
         print_error_and_exit(ERROR_SEND, 84);

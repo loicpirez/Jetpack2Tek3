@@ -10,6 +10,7 @@
 
 #include <thread.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 void display_winner_message(t_thread_data *thread_data)
 {
@@ -27,5 +28,5 @@ void display_winner_message(t_thread_data *thread_data)
         printf("You loose!\n");
     }
     fflush(0);
-
+    exit(0);
 }
