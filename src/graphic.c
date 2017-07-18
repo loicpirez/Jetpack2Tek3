@@ -22,8 +22,7 @@ int calc_block_size(t_resolution *resolution, t_thread_data *thread_data)
 
 void graphic(t_thread_data *thread_data)
 {
-    while (thread_data->server_data->is_ready != true)
-    {}
+    while (thread_data->server_data->is_ready != true);
 
     SDL_Window *window = NULL;
     SDL_Renderer *background_renderer = NULL;
