@@ -36,7 +36,7 @@ void check_map(char **answer, t_thread_data *thread_data) {
 void check_id(char **answer, t_thread_data *thread_data) {
     int index = find_index(answer, "ID");
 
-    if (!answer[index + 1] || (sscanf(answer[index + 1], "%zu", &thread_data->server_data->id) != 1)) {
+    if (!answer[index + 1] || (sscanf(answer[index + 1], "%d", &thread_data->server_data->id) != 1)) {
         print_error_and_exit(ERROR_IDFORMAT, 84);
     }
 }

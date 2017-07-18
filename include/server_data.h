@@ -15,7 +15,7 @@
 #include <stdbool.h>
 
 typedef struct s_server_data {
-    size_t id;
+    int id;
     size_t mapX;
     size_t mapY;
     char *raw_map;

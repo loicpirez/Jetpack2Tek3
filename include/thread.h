@@ -13,6 +13,15 @@
 
 #include "args.h"
 
+#include <pthread.h>
+
+typedef struct s_thread_data {
+    pthread_mutex_t verrou;
+    t_args *args;
+    t_server_data *server_data;
+}   t_thread_data;
+
+
 t_thread_data		*create_thread(t_args *args, t_server_data *server_data);
 
 #endif		/* !THREAD_H_ */

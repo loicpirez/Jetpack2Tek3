@@ -18,11 +18,6 @@ typedef struct s_args {
     char *ip;
 }              t_args;
 
-typedef struct s_thread_data {
-    t_args *args;
-    t_server_data *server_data;
-}   t_thread_data;
-
 t_args *get_args(int argc, char **argv);
 
 #endif		/* !ARGS_H_ */

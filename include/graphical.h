@@ -17,6 +17,7 @@
 #define COLOR_P1 "0x0EE228"
 #define COLOR_P2 "0xD70903"
 
+#include "thread.h"
 
 void		graphic(t_thread_data *thread_data);
 

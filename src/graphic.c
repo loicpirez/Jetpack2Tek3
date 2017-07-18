@@ -22,7 +22,6 @@
 }*/
 
 void graphic(t_thread_data *thread_data) {
-    (void) thread_data;
     t_resolution *res = get_current_resolution();
     SDL_Window *window = NULL;
     SDL_Renderer *background_renderer = NULL;
@@ -59,20 +58,24 @@ void graphic(t_thread_data *thread_data) {
             SDL_RenderFillRect(coin_renderer, &coin_reclangle);
 
             SDL_PollEvent(&events);
+            pthread_mutex_lock(&thread_data->verrou);
             if (events.type == SDL_KEYDOWN) {
                 ask_server(thread_data->server_data->sock, "FIRE 1\n");
             } else {
                 ask_server(thread_data->server_data->sock, "FIRE 0\n");
             }
+            pthread_mutex_unlock(&thread_data->verrou);
             SDL_RenderPresent(background_renderer);
             SDL_RenderPresent(coin_renderer);
         }
+        pthread_mutex_lock(&thread_data->verrou);
         if (thread_data->server_data->winner == -1)
             printf("Nobody wins\n");
         else if (thread_data->server_data->winner == thread_data->server_data->id)
             printf("You win!\n");
         else
             printf("You loose!\n");
+        pthread_mutex_unlock(&thread_data->verrou);
     } else
         print_error_and_exit(ERROR_SDL, 84);
     exit(0);

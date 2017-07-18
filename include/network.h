@@ -13,6 +13,7 @@
 
 #define BUFFER_SIZE 8192
 
+#include "thread.h"
 #include "args.h"
 
 void network(t_thread_data *thread_data);
