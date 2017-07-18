@@ -1,28 +1,28 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_39749/fast"
-/usr/bin/make -f CMakeFiles/cmTC_39749.dir/build.make CMakeFiles/cmTC_39749.dir/build
-make[1] : on entre dans le répertoire « /home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_39749.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -Wall -W -pedantic -g    -o CMakeFiles/cmTC_39749.dir/CheckSymbolExists.c.o   -c /home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
-/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:11: warning: ISO C forbids conversion of function pointer to object pointer type [-Wpedantic]
+Run Build Command:"/usr/bin/gmake" "cmTC_7f2d5/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_7f2d5.dir/build.make CMakeFiles/cmTC_7f2d5.dir/build
+gmake[1]: Entering directory '/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7f2d5.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -Wall -W -pedantic -g    -o CMakeFiles/cmTC_7f2d5.dir/CheckSymbolExists.c.o   -c /home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:11: warning: ISO C forbids conversion of function pointer to object pointer type [-Wpedantic]
    return ((int*)(&pthread_create))[argc];
            ^
-Linking C executable cmTC_39749
-/home/loicpirez/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.4694.31/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_39749.dir/link.txt --verbose=1
-/usr/bin/cc   -Wall -W -pedantic -g     CMakeFiles/cmTC_39749.dir/CheckSymbolExists.c.o  -o cmTC_39749 
-CMakeFiles/cmTC_39749.dir/CheckSymbolExists.c.o : Dans la fonction « main » :
-/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8 : référence indéfinie vers « pthread_create »
+Linking C executable cmTC_7f2d5
+/home/vermeu_v/Downloads/Softwares/apps/CLion/ch-0/172.3317.49/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7f2d5.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -W -pedantic -g     CMakeFiles/cmTC_7f2d5.dir/CheckSymbolExists.c.o  -o cmTC_7f2d5 
+CMakeFiles/cmTC_7f2d5.dir/CheckSymbolExists.c.o: In function `main':
+/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8: undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_39749.dir/build.make:97 : la recette pour la cible « cmTC_39749 » a échouée
-make[1]: *** [cmTC_39749] Erreur 1
-make[1] : on quitte le répertoire « /home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/CMakeTmp »
-Makefile:126 : la recette pour la cible « cmTC_39749/fast » a échouée
-make: *** [cmTC_39749/fast] Erreur 2
+CMakeFiles/cmTC_7f2d5.dir/build.make:97: recipe for target 'cmTC_7f2d5' failed
+gmake[1]: *** [cmTC_7f2d5] Error 1
+gmake[1]: Leaving directory '/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_7f2d5/fast' failed
+gmake: *** [cmTC_7f2d5/fast] Error 2
 
-File /home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -38,22 +38,22 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5fc9f/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5fc9f.dir/build.make CMakeFiles/cmTC_5fc9f.dir/build
-make[1] : on entre dans le répertoire « /home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_5fc9f.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -Wall -W -pedantic -g -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_5fc9f.dir/CheckFunctionExists.c.o   -c /home/loicpirez/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.4694.31/bin/cmake/share/cmake-3.7/Modules/CheckFunctionExists.c
-Linking C executable cmTC_5fc9f
-/home/loicpirez/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.4694.31/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5fc9f.dir/link.txt --verbose=1
-/usr/bin/cc   -Wall -W -pedantic -g -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_5fc9f.dir/CheckFunctionExists.c.o  -o cmTC_5fc9f -lpthreads 
-/usr/bin/ld : ne peut trouver -lpthreads
+Run Build Command:"/usr/bin/gmake" "cmTC_f04b8/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_f04b8.dir/build.make CMakeFiles/cmTC_f04b8.dir/build
+gmake[1]: Entering directory '/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f04b8.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -Wall -W -pedantic -g -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_f04b8.dir/CheckFunctionExists.c.o   -c /home/vermeu_v/Downloads/Softwares/apps/CLion/ch-0/172.3317.49/bin/cmake/share/cmake-3.8/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f04b8
+/home/vermeu_v/Downloads/Softwares/apps/CLion/ch-0/172.3317.49/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f04b8.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -W -pedantic -g -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_f04b8.dir/CheckFunctionExists.c.o  -o cmTC_f04b8 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_5fc9f.dir/build.make:97 : la recette pour la cible « cmTC_5fc9f » a échouée
-make[1]: *** [cmTC_5fc9f] Erreur 1
-make[1] : on quitte le répertoire « /home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/CMakeTmp »
-Makefile:126 : la recette pour la cible « cmTC_5fc9f/fast » a échouée
-make: *** [cmTC_5fc9f/fast] Erreur 2
+CMakeFiles/cmTC_f04b8.dir/build.make:97: recipe for target 'cmTC_f04b8' failed
+gmake[1]: *** [cmTC_f04b8] Error 1
+gmake[1]: Leaving directory '/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_f04b8/fast' failed
+gmake: *** [cmTC_f04b8/fast] Error 2
 
 

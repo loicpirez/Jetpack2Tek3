@@ -1,42 +1,42 @@
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-        "C"
-        )
+  "C"
+  )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-        "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/src/args.c" "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/client.dir/src/args.c.o"
-        "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/src/array.c" "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/client.dir/src/array.c.o"
-        "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/src/calc.c" "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/client.dir/src/calc.c.o"
-        "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/src/check.c" "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/client.dir/src/check.c.o"
-        "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/src/display.c" "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/client.dir/src/display.c.o"
-        "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/src/error.c" "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/client.dir/src/error.c.o"
-        "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/src/event.c" "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/client.dir/src/event.c.o"
-        "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/src/free.c" "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/client.dir/src/free.c.o"
-        "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/src/get.c" "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/client.dir/src/get.c.o"
-        "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/src/graphic.c" "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/client.dir/src/graphic.c.o"
-        "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/src/io.c" "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/client.dir/src/io.c.o"
-        "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/src/main.c" "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/client.dir/src/main.c.o"
-        "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/src/network.c" "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/client.dir/src/network.c.o"
-        "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/src/ratio.c" "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/client.dir/src/ratio.c.o"
-        "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/src/resolution.c" "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/client.dir/src/resolution.c.o"
-        "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/src/server_data.c" "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/client.dir/src/server_data.c.o"
-        "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/src/signals.c" "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/client.dir/src/signals.c.o"
-        "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/src/strings.c" "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/client.dir/src/strings.c.o"
-        "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/src/thread.c" "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/client.dir/src/thread.c.o"
-        "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/src/usage.c" "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/client.dir/src/usage.c.o"
-        "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/src/window.c" "/home/loicpirez/Développement/CLionProjects/jetpack2Tek3_2016/cmake-build-debug/CMakeFiles/client.dir/src/window.c.o"
-        )
+  "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/src/args.c" "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/client.dir/src/args.c.o"
+  "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/src/array.c" "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/client.dir/src/array.c.o"
+  "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/src/calc.c" "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/client.dir/src/calc.c.o"
+  "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/src/check.c" "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/client.dir/src/check.c.o"
+  "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/src/display.c" "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/client.dir/src/display.c.o"
+  "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/src/error.c" "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/client.dir/src/error.c.o"
+  "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/src/event.c" "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/client.dir/src/event.c.o"
+  "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/src/free.c" "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/client.dir/src/free.c.o"
+  "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/src/get.c" "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/client.dir/src/get.c.o"
+  "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/src/graphic.c" "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/client.dir/src/graphic.c.o"
+  "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/src/io.c" "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/client.dir/src/io.c.o"
+  "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/src/main.c" "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/client.dir/src/main.c.o"
+  "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/src/network.c" "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/client.dir/src/network.c.o"
+  "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/src/ratio.c" "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/client.dir/src/ratio.c.o"
+  "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/src/resolution.c" "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/client.dir/src/resolution.c.o"
+  "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/src/server_data.c" "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/client.dir/src/server_data.c.o"
+  "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/src/signals.c" "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/client.dir/src/signals.c.o"
+  "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/src/strings.c" "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/client.dir/src/strings.c.o"
+  "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/src/thread.c" "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/client.dir/src/thread.c.o"
+  "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/src/usage.c" "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/client.dir/src/usage.c.o"
+  "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/src/window.c" "/home/vermeu_v/Documents/Synthesis_Pool/jetpack2Tek3_2016/client/cmake-build-debug/CMakeFiles/client.dir/src/window.c.o"
+  )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-        "../include"
-        "/usr/include/SDL"
-        )
+  "../include"
+  "/usr/include/SDL"
+  )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-        )
+  )
 
 # Fortran module output directory.
 set(CMAKE_Fortran_TARGET_MODULE_DIR "")
