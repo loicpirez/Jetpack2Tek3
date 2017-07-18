@@ -52,7 +52,10 @@ void graphic(t_thread_data *thread_data) {
 
     if (window) {
         while (thread_data->server_data->is_finish != true) {
-
+            pthread_mutex_lock(&thread_data->verrou);
+            if (thread_data->server_data->is_finish == true)
+                break;
+            pthread_mutex_unlock(&thread_data->verrou);
             SDL_RenderClear(background_renderer);
             SDL_RenderClear(coin_renderer);
             SDL_RenderFillRect(coin_renderer, &coin_reclangle);
