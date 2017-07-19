@@ -5,21 +5,27 @@
 ## Login   <vermeu_v@epitech.net>
 ## 
 ## Started on  Wed Jul 19 12:05:39 2017 Valerian Vermeulen
-## Last update Wed Jul 19 13:56:58 2017 Valerian Vermeulen
+## Last update Wed Jul 19 15:42:41 2017 Valerian Vermeulen
 ##
 
 all		:
-			make -C server
-			make -C client
+			make -C fold_server
+			make -C fold_client
+
+server	:
+			make -C fold_server
+
+client	:
+			make -C fold_client
 
 clean	:
-			make -C server clean
-			make -C client clean
+			make -C fold_server clean
+			make -C fold_client clean
 
 fclean	:
-			make -C server fclean
-			make -C client fclean
+			make -C fold_server fclean
+			make -C fold_client fclean
 
 re		:
-			make -C server re
-			make -C client re
+			make -C fold_server re
+			make -C fold_client re
