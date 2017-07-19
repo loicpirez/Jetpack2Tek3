@@ -35,14 +35,15 @@ int		check_arguments(t_args *args, int ac, char **av)
   init_args(args);
   while (cpt < ac)
   {
-    if (cpt % 2 && av[cpt+1][0] == '-')
+    if (cpt % 2 && (av[cpt+1][0] == '-' && \
+    	(av[cpt+1][1] <= '0' && av[cpt+1][1] >= '9')))
       args->error = 1;
     if (strcmp(av[cpt], "-p") == 0)
-      args->port = strtol(av[cpt+1], &error, 10);
+      args->port = (int)(strtol(av[cpt+1], &error, 10));
     if (strcmp(av[cpt], "-m") == 0)
       args->map_filename = strdup(av[cpt+1]);
     if (strcmp(av[cpt], "-g") == 0)
-      args->gravity = strtol(av[cpt+1], &error, 10);
+      args->gravity = (int)(strtol(av[cpt+1], &error, 10));
     cpt++;
   }
   if (error != NULL)

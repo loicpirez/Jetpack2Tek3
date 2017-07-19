@@ -23,8 +23,8 @@ static void	check_valid_map(t_map *map)
       len--;
     if (len != map->width)
     {
-      dprintf(2, "Invalid map\n");
-      exit(0);
+      dprintf(2, "Invalid map pd %zu, %zu\n", len, map->width);
+      exit(84);
     }
     cpt++;
   }
@@ -48,7 +48,7 @@ t_map		init_map(char *filename)
     if (check_line(buff) == 0)
       add_line(&map, buff, cpt);
     else
-      exit(0);
+      exit(84);
     cpt++;
   }
   map.height = cpt;

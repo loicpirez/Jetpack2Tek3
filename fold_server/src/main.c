@@ -31,11 +31,17 @@ int		main(int ac, char **av)
   {
     args->error = check_arguments(args, ac, av);
     if (args->error == 1)
+    {
       dprintf(2, "Invalid arguments\n");
+      return (84);
+    }
     else
       init_and_launch(args);
   }
   else
+  {
     dprintf(2, "Invalid arguments\n");
+    return (84);
+  }
   return (0);
 }
