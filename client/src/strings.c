@@ -5,7 +5,7 @@
 ** Login   <loic.pirez@epitech.eu>
 **
 ** Started on  Thu Jul 13 15:28:54 2017 Loïc Pirez
-** Last update Tue Jul 18 21:10:49 2017 Loïc Pirez
+** Last update Tue Jul 18 22:06:53 2017 Loïc Pirez
 */
 
 #include <stdlib.h>
@@ -59,10 +59,13 @@ void remove_char_from_string(char *str, char to_skip)
 
 char *copy_string(const char *source)
 {
+  char *copy;
+  char *dest;
   int len = (int) strlen(source);
-  char *copy = malloc((size_t) (len + 1));
-  char *dest = copy;
 
+  if ((copy = malloc((size_t) (len + 1))) == NULL)
+    print_error_and_exit(ERROR_MALLOC, 84);
+  dest = copy;
   while (*source != '\0')
     {
       *dest++ = *source++;
