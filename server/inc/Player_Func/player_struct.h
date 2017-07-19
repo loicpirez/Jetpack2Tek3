@@ -14,8 +14,8 @@
 typedef struct	s_player
 {
   int		id;
-  int		x;
-  int		y;
+  float		x;
+  float		y;
   int		score;
   int		gravity;
 }		t_player;

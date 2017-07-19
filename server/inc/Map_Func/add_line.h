@@ -8,8 +8,8 @@
 ** Last update Mon Jul 17 13:50:29 2017 Valerian VERMEULEN
 */
 
-#ifndef SERVER_ADD_LINE_H
-#define SERVER_ADD_LINE_H
+#ifndef		SERVER_ADD_LINE_H
+# define	SERVER_ADD_LINE_H
 
 # include	<stdio.h> // TODO : remove
 # include	<string.h>

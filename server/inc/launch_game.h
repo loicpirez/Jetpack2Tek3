@@ -18,7 +18,6 @@
 # include	"Player_Func/init_player.h"
 
 void		create_socket(int *fd, const int port);
-
 void		change_gravity(t_player *player);
 void		update_game(t_map *map, t_player *players);
 int		check_winner(t_player *players);

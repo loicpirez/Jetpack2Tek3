@@ -24,5 +24,4 @@ void		init_player(t_player *player, int gravity);
 t_map		init_map(char *filename);
 
 void		launch_game(t_map *map, t_player *players, int port);
-
 #endif		//JETPACK2TEK3_2016_MAIN_H

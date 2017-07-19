@@ -38,7 +38,6 @@ t_map		init_map(char *filename)
   FILE		*fd;
   t_map		map;
 
-
   cpt = 0;
   size = 0;
   buff = NULL;
