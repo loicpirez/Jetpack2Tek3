@@ -5,12 +5,12 @@
 ## Login   <loic.pirez@epitech.eu>
 ## 
 ## Started on  Thu Jul 13 13:58:08 2017 Loïc Pirez
-## Last update Thu Jul 13 13:59:42 2017 Loïc Pirez
+## Last update Wed Jul 19 12:23:35 2017 Loïc Pirez
 ##
 
 CC	?=	gcc
 
-NAME	=	clientJ2T3
+NAME	=	../clientJ2T3
 
 SRCS	=	$(shell cat sources.mk)
 

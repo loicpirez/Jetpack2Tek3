@@ -5,7 +5,7 @@
 ** Login   <loic.pirez@epitech.eu>
 **
 ** Started on  Tue Jul 18 13:44:08 2017 Loïc Pirez
-** Last update Tue Jul 18 21:11:10 2017 Loïc Pirez
+** Last update Wed Jul 19 12:25:11 2017 Loïc Pirez
 */
 
 #include <graphical.h>
@@ -68,18 +68,15 @@ void draw_window(SDL_Surface *window, t_thread_data *thread_data, int block_size
   SDL_Surface *electric_wall;
   SDL_Surface *player_one;
   SDL_Surface *player_two;
-  bool lock = false;
 
   coin = SDL_CreateRGBSurface(SDL_HWSURFACE, block_size, block_size, 32, 0, 0, 0, 0);
   electric_wall = SDL_CreateRGBSurface(SDL_HWSURFACE, block_size, block_size, 32, 0, 0, 0, 0);
   player_one = SDL_CreateRGBSurface(SDL_HWSURFACE, block_size, block_size, 32, 0, 0, 0, 0);
   player_two = SDL_CreateRGBSurface(SDL_HWSURFACE, block_size, block_size, 32, 0, 0, 0, 0);
-
   SDL_FillRect(coin, NULL, SDL_MapRGB(window->format, COLOR_C));
   SDL_FillRect(electric_wall, NULL, SDL_MapRGB(window->format, COLOR_E));
   SDL_FillRect(player_one, NULL, SDL_MapRGB(window->format, COLOR_P1));
   SDL_FillRect(player_two, NULL, SDL_MapRGB(window->format, COLOR_P2));
-
   while (thread_data->server_data->is_finish != true)
     {
       draw_map(window, coin, electric_wall, thread_data, block_size);
@@ -90,16 +87,11 @@ void draw_window(SDL_Surface *window, t_thread_data *thread_data, int block_size
 	  if (thread_data->server_data->is_finish == true || event.type == SDL_QUIT)
             {
 	      thread_data->server_data->is_finish = true;
-	      lock = true;
             }
 	  do_fire(event, thread_data);
         }
       SDL_Flip(window);
       SDL_FillRect(window, NULL, 0x000000);
-    }
-  if (lock == true)
-    {
-
     }
   display_winner_message(thread_data);
 }
