@@ -73,14 +73,11 @@ void		launch_game(t_map *map, t_player *players, int port)
   create_socket(&fd, port);
   client_fds[0] = accept(fd,(struct sockaddr *)&s_in_client, &s_in_size);
   client_fds[1] = accept(fd,(struct sockaddr *)&s_in_client, &s_in_size);
-  printf("HOLO 1\n");
   if (client_fds[0] == -1 || client_fds[1] == -1)
   {
-    printf("HOLO 2\n");
     close(fd);
     exit(84);
   }
-  printf("HOLO 3\n");
   get_ready(fd, client_fds, players, map);
   play_game();
   if (close(client_fds[0]) == -1 || close(client_fds[1]) == -1 || \
