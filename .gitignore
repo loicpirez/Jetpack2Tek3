@@ -2,7 +2,7 @@
 *.o
 *~
 *#
-.idea
+*.idea*
 *.sw*
 CMake*
 cmake*
