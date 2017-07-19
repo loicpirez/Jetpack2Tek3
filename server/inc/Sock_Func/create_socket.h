@@ -11,4 +11,8 @@
 #ifndef		SERVER_CREATE_SOCKET_H
 # define	SERVER_CREATE_SOCKET_H
 
+# include	<netdb.h>
+# include	<stdlib.h>
+# include	<unistd.h>
+
 #endif		//SERVER_CREATE_SOCKET_H

@@ -11,14 +11,9 @@
 #ifndef		SERVER_LAUNCH_GAME_H
 # define	SERVER_LAUNCH_GAME_H
 
-# include	<sys/types.h>
 # include	<sys/socket.h>
-# include	<netdb.h>
-# include	<stdlib.h>
 # include	<netinet/in.h>
-# include	<arpa/inet.h>
 # include	<unistd.h>
-# include	<string.h>
 # include	"Map_Func/init_map.h"
 # include	"Player_Func/init_player.h"
 

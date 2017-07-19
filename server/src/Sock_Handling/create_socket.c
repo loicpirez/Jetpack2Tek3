@@ -12,5 +12,26 @@
 
 void		create_socket(int *fd, int port)
 {
+  struct protoent	*pe;
+  struct sockaddr_in	s_in;
 
+  pe = getprotobyname("TCP");
+  if (!pe)
+    exit(84);
+  *fd = socket(AF_INET, SOCK_STREAM, pe->p_proto);
+  if (*fd == -1)
+    exit(84);
+  s_in.sin_family = AF_INET;
+  s_in.sin_port = htons((uint16_t)port);
+  s_in.sin_addr.s_addr = INADDR_ANY;
+  if (bind(*fd, (const struct sockaddr *)&s_in, sizeof(s_in)) == -1)
+  {
+    close(*fd);
+    exit(84);
+  }
+  if (listen(*fd, 42) == -1)
+  {
+    close(*fd);
+    exit(84);
+  }
 }

@@ -31,12 +31,14 @@ CMD	=	src/Sock_Handling/Cmd_Handling/
 
 SRCS	=	$(SRC)main.c \
 		$(SRC)check_arguments.c \
+		$(SRC)launch_game.c \
 		$(MAP)init_map.c \
 		$(MAP)open_file.c \
 		$(MAP)check_line.c \
 		$(MAP)add_line.c \
 		$(PLAYER)init_player.c \
 		$(SOCKET)init_socket.c \
+		$(SOCKET)create_socket.c \
 		$(CMD)coin_cmd.c \
 		$(CMD)finish_cmd.c \
 		$(CMD)fire_cmd.c \
