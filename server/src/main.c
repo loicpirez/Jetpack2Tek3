@@ -10,7 +10,7 @@
 
 #include	"main.h"
 
-static void	init_all(t_args *args)
+static void	init_and_launch(t_args *args)
 {
   t_map		map;
   t_player	*player;
@@ -19,8 +19,7 @@ static void	init_all(t_args *args)
   init_player(&player[0], args->gravity);
   init_player(&player[1], args->gravity);
   map = init_map(args->map_filename);
-  (void)player;
-  (void)map;
+  launch_game(&map, player);
 }
 
 int		main(int ac, char **av)
@@ -34,7 +33,7 @@ int		main(int ac, char **av)
     if (args->error == 1)
       dprintf(2, "Invalid arguments\n");
     else
-      init_all(args);
+      init_and_launch(args);
   }
   else
     dprintf(2, "Invalid arguments\n");
