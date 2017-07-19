@@ -5,7 +5,7 @@
 ## Login   <vermeu_v@epitech.net>
 ## 
 ## Started on  Sat Jul 15 17:27:27 2017 Valerian Vermeulen
-## Last update Sat Jul 15 17:31:57 2017 Valerian Vermeulen
+## Last update Wed Jul 19 12:15:13 2017 Valerian Vermeulen
 ##
 
 CC		=	gcc
@@ -17,7 +17,7 @@ CFLAGS	+=	-Iinc
 
 LDFLAGS	+=
 
-NAME	=	serverJ2T3
+NAME	=	../serverJ2T3
 
 SRC	=	src/
 

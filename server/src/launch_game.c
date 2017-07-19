@@ -83,7 +83,7 @@ void		launch_game(t_map *map, t_player *players, int port)
   printf("HOLO 3\n");
   get_ready(fd, client_fds, players, map);
   play_game();
-  if (close(fd) == -1 || close(client_fds[0] == -1 || \
-  	close(client_fds[1]) == -1))
+  if (close(client_fds[0]) == -1 || close(client_fds[1]) == -1 || \
+  	close(fd) == -1)
     exit(84);
 }
