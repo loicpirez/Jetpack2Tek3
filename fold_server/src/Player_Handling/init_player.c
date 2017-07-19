@@ -15,6 +15,8 @@ void		init_player(t_player *player, int gravity)
   player = malloc(sizeof(t_player));
   if (player == NULL)
     exit(84);
+  if (player == NULL)
+    exit(84);
   player->id = 0;
   player->x = 0;
   player->y = 0;

@@ -16,6 +16,8 @@ static void	init_and_launch(t_args *args)
   t_player	*players;
 
   players = malloc(sizeof(t_player) * 2);
+  if (players == NULL)
+    exit(84);
   init_player(&players[0], args->gravity);
   init_player(&players[1], args->gravity);
   map = init_map(args->map_filename);
@@ -27,6 +29,8 @@ int		main(int ac, char **av)
   t_args	*args;
 
   args = malloc(sizeof(t_args));
+  if (args == NULL)
+    return (84);
   if (ac == 7)
   {
     args->error = check_arguments(args, ac, av);
