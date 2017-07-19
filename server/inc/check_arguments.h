@@ -11,7 +11,6 @@
 #ifndef		SERVER_CHECK_ARGUMENTS_H
 # define	SERVER_CHECK_ARGUMENTS_H
 
-# include	<stdio.h> // TODO : remove
 # include	<string.h>
 # include	<stdlib.h>
 # include	"args_struct.h"

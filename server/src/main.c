@@ -13,13 +13,13 @@
 static void	init_and_launch(t_args *args)
 {
   t_map		map;
-  t_player	*player;
+  t_player	*players;
 
-  player = malloc(sizeof(t_player) * 2);
-  init_player(&player[0], args->gravity);
-  init_player(&player[1], args->gravity);
+  players = malloc(sizeof(t_player) * 2);
+  init_player(&players[0], args->gravity);
+  init_player(&players[1], args->gravity);
   map = init_map(args->map_filename);
-  launch_game(&map, player);
+  launch_game(&map, players, args->port);
 }
 
 int		main(int ac, char **av)
