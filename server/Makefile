@@ -5,14 +5,14 @@
 ## Login   <vermeu_v@epitech.net>
 ## 
 ## Started on  Sat Jul 15 17:27:27 2017 Valerian Vermeulen
-## Last update Wed Jul 19 13:49:40 2017 Valerian Vermeulen
+## Last update Wed Jul 19 13:57:44 2017 Valerian Vermeulen
 ##
 
 CC		=	gcc
 
 RM		=	rm -rf
 
-CFLAGS	+=	-W -Wall -Wextra -Werror -g
+CFLAGS	+=	-W -Wall -Wextra -Werror
 CFLAGS	+=	-Iinc
 
 LDFLAGS	+=

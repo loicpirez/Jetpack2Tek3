@@ -5,25 +5,21 @@
 ## Login   <vermeu_v@epitech.net>
 ## 
 ## Started on  Wed Jul 19 12:05:39 2017 Valerian Vermeulen
-## Last update Wed Jul 19 12:17:28 2017 Valerian Vermeulen
+## Last update Wed Jul 19 13:56:58 2017 Valerian Vermeulen
 ##
 
-CC		=	gcc
-
-RM		=	rm -rf
-
 all		:
-			cd server && make
-			cd client && make
+			make -C server
+			make -C client
 
 clean	:
-			cd server && make clean
-			cd client && make clean
+			make -C server clean
+			make -C client clean
 
 fclean	:
-			cd server && make fclean
-			cd client && make fclean
+			make -C server fclean
+			make -C client fclean
 
 re		:
-			cd server && make re
-			cd client && make re
+			make -C server re
+			make -C client re
