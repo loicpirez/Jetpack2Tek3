@@ -5,14 +5,14 @@
 ## Login   <vermeu_v@epitech.net>
 ## 
 ## Started on  Sat Jul 15 17:27:27 2017 Valerian Vermeulen
-## Last update Wed Jul 19 12:15:13 2017 Valerian Vermeulen
+## Last update Wed Jul 19 13:48:26 2017 Valerian Vermeulen
 ##
 
 CC		=	gcc
 
 RM		=	rm -rf
 
-CFLAGS	+=	-W -Wall -Wextra -Werror -g ## TODO : remove -g
+CFLAGS	+=	-W -Wall -Wextra -Werror
 CFLAGS	+=	-Iinc
 
 LDFLAGS	+=
@@ -37,7 +37,6 @@ SRCS	=	$(SRC)main.c \
 		$(MAP)check_line.c \
 		$(MAP)add_line.c \
 		$(PLAYER)init_player.c \
-		$(SOCKET)init_socket.c \
 		$(SOCKET)create_socket.c \
 		$(CMD)coin_cmd.c \
 		$(CMD)finish_cmd.c \
